@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en" class="no-js">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Login form using username field - Admin starter kit</title>
+
+	<link rel="stylesheet" href="../dist/styles/core.css" media="screen">
+
+	<!--
+	Print (Edge doesn't apply to print otherwise)
+	Edge, Chrome 39+, Opera 26+, Safari 9+, iOS 9+, Android ~5+, Android UCBrowser ~11.8+
+	FF 47+
+	-->
+	<link rel="stylesheet" id="advanced-stylesheet" href="../dist/styles/advanced.min.css" media="
+	only print,
+	only all and (pointer: fine), only all and (pointer: coarse), only all and (pointer: none),
+	only all and (min--moz-device-pixel-ratio:0) and (display-mode:browser), (min--moz-device-pixel-ratio:0) and (display-mode:fullscreen)
+	">
+
+	<link rel="stylesheet" href="../dist/styles/print.css" media="print">
+
+	<script src="../dist/js/libraries/fontfaceobserver.js"></script>
+
+	<script>
+		let myFont = new FontFaceObserver('Nunito');
+
+		Promise.all([myFont.load()]).then(function () {
+			document.documentElement.className += " fonts-loaded";
+		});
+
+		(function() {
+			let linkEl = document.getElementById('advanced-stylesheet');
+			if (window.matchMedia && window.matchMedia(linkEl.media).matches) {
+				let head = document.querySelector('head');
+				// Add main JS
+				let jsMain = document.createElement('script');
+				jsMain.src = '../dist/js/main.js';
+				jsMain.defer = true;
+				head.appendChild(jsMain);
+				// Update classname to show JS is available
+				(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement);
+			}
+		})();
+	</script>
+
+
+</head>
+
+<body>
+<div class="not-footer">
+	<main id="amplify-main">
+		<details>
+			<summary>Notes on this example form</summary>
+			<ul>
+				<li>This login form asks for a username, which may or may not be an email address. The input markup therefore has to be more generic.</li>
+				<li>There is no need for a password confirmation field, thanks to the show/hide functionality</li>
+				<li>It should be self-evident that all fields on a login form are required (and there should be no non-essential fields). The sentence before the form makes this obvious to everyone.</li>
+				<li>The <code>novalidate</code> attribute on the form turns off HTML5 in-browser validation, which is not very accessible.</li>
+			</ul>
+		</details>
+		<h1>Login</h1>
+		<p>All fields are required.</p>
+		<form class="amplify-form" novalidate>
+			<div class="field">
+				<label for="username-input">Username</label>
+				<input type="text" id="username-input" name="username" autocomplete="username" autocapitalize="none" autocorrect="off" spellcheck="false">
+			</div>
+			<div class="field" data-field="amplify-password">
+				<label for="password-input">Password</label>
+				<div class="input-group">
+					<input type="password" id="password-input" name="password" autocomplete="current-password" autocapitalize="none" autocorrect="off" spellcheck="false">
+					<button type="button" aria-controls="password-input" hidden>Show</button>
+				</div>
+			</div>
+			<p><a href="javascript:void(0)">Forgot my password</a></p>
+			<div class="field">
+				<button type="submit">Login</button>
+			</div>
+		</form>
+		<h2>If you don’t have an account</h2>
+		<p><a href="javascript:void(0)">Sign up for an account</a></p>
+	</main>
+</div>
+</body>
+
+<script>
+	(function () {
+
+		// insertAfter helper function
+		function insertAfter(el, referenceNode) {
+			referenceNode.parentNode.insertBefore(el, referenceNode.nextSibling);
+		}
+
+		let passwordField = document.querySelector('[data-field="amplify-password"]');
+		if (passwordField) {
+			let passwordInput = passwordField.querySelector('input[type="password"]');
+			let showHideBtn = passwordField.querySelector('button[aria-controls="password-input"]');
+
+			showHideBtn.removeAttribute('hidden');
+
+			// Create and append a status region for updating screen readers.
+			// This is injected between the input and button for a sensible reading order when
+			// moving through the page content linearly:
+			// [password input] -> [your password is visible/hidden] -> [show/hide password]
+			const screenReaderStatusMessage = document.createElement('div');
+			screenReaderStatusMessage.setAttribute('class', 'visuallyhidden');
+			screenReaderStatusMessage.setAttribute('aria-live', 'polite');
+
+			insertAfter(screenReaderStatusMessage, passwordInput);
+
+			function setType(type) {
+				if (passwordInput.type === type) return;
+
+				passwordInput.setAttribute('type', type);
+
+				const isHidden = type === 'password';
+				showHideBtn.innerText = isHidden ? 'Show' : 'Hide';
+				screenReaderStatusMessage.innerText = isHidden
+					? 'Your password is hidden'
+					: 'Your password is visible';
+			}
+
+			function hide() {
+				setType('password');
+			}
+
+			function show() {
+				setType('text');
+			}
+
+			function toggle(event) {
+				event.preventDefault();
+				passwordInput.type === 'password' ? show() : hide();
+			}
+
+			showHideBtn.addEventListener('click', toggle);
+
+			if (passwordInput.form) {
+				passwordInput.form.addEventListener('submit', hide);
+			}
+
+			window.addEventListener('pageshow', (event) => {
+				if (event.persisted && passwordInput.type !== 'password') {
+					hide();
+				}
+			})
+
+			hide(); // Default to hidden
+		}
+	})();
+</script>
+
+</html>
