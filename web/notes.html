@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en" class="no-js">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Notes examples</title>
+
+	<link rel="stylesheet" href="../dist/styles/core.css" media="screen">
+
+	<!--
+	Print (Edge doesn't apply to print otherwise)
+	Edge, Chrome 39+, Opera 26+, Safari 9+, iOS 9+, Android ~5+, Android UCBrowser ~11.8+
+	FF 47+
+	-->
+	<link rel="stylesheet" id="advanced-stylesheet" href="../dist/styles/advanced.min.css" media="
+	only print,
+	only all and (pointer: fine), only all and (pointer: coarse), only all and (pointer: none),
+	only all and (min--moz-device-pixel-ratio:0) and (display-mode:browser), (min--moz-device-pixel-ratio:0) and (display-mode:fullscreen)
+	">
+
+	<link rel="stylesheet" href="../dist/styles/print.css" media="print">
+
+	<script src="../dist/js/libraries/fontfaceobserver.js"></script>
+
+	<script>
+		let myFont = new FontFaceObserver('Nunito');
+
+		Promise.all([myFont.load()]).then(function () {
+			document.documentElement.className += " fonts-loaded";
+		});
+
+		(function() {
+			let linkEl = document.getElementById('advanced-stylesheet');
+			if (window.matchMedia && window.matchMedia(linkEl.media).matches) {
+				let head = document.querySelector('head');
+				// Add main JS
+				let jsMain = document.createElement('script');
+				jsMain.src = '../dist/js/main.js';
+				jsMain.defer = true;
+				head.appendChild(jsMain);
+				// Update classname to show JS is available
+				(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement);
+			}
+		})();
+	</script>
+
+
+</head>
+
+<body>
+<div class="not-footer">
+	<main id="amplify-main">
+		<h1>Notes examples</h1>
+		<details>
+			<summary>About these examples</summary>
+			<ul>
+				<li>The <code>role</code> on the outermost container creates an ARIA live region when set to <code>status</code> or <code>alert</code>.</li>
+				<li>Only error messages should have a <code>role</code> of <code>alert</code>. The alert role should read out content that has changed, or bring the user's attention to it immediately, so it should not be used for static content or used regularly. Alerts, by definition, are disruptive. Lots of alerts at once or unnecessary alerts will create a bad user experience.</li>
+				<li>If the content of the note is advisory information not important enough to justify an alert, set the <code>role</code> to <code>status</code>.</li>
+			</ul>
+		</details>
+		<div class="l-box note note--info" role="status">
+			<div class="note__header">
+				<svg xmlns="http://www.w3.org/2000/svg" class="icon icon--24" fill="none" viewBox="0 0 32 32" width="24" height="24" focusable="false" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M16 5C9.925 5 5 9.925 5 16s4.925 11 11 11 11-4.925 11-11S22.075 5 16 5ZM3 16C3 8.82 8.82 3 16 3s13 5.82 13 13-5.82 13-13 13S3 23.18 3 16Z" clip-rule="evenodd"/><path fill="currentColor" fill-rule="evenodd" d="M14 15a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v6a1 1 0 1 1 0 2h-1a1 1 0 0 1-1-1v-6a1 1 0 0 1-1-1Z" clip-rule="evenodd"/><path fill="currentColor" d="M15.75 12a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/></svg>
+				<h2>Informative note</h2>
+			</div>
+			<div class="note__body">
+				<p>Group calendering is currently in beta-test. We encourage everyone to use it and report feedback and issues to its dedicated <a href="javascript:void(0);">GitHub repository</a>.</p>
+			</div>
+		</div>
+		<div class="l-box note note--success" role="status">
+			<div class="note__header">
+				<svg xmlns="http://www.w3.org/2000/svg" class="icon icon--24" fill="none" viewBox="0 0 32 32" width="24" height="24"><path fill="currentColor" d="M21.707 12.293a1.001 1.001 0 0 1 0 1.415l-7 7a1.001 1.001 0 0 1-1.415 0l-3-3a1 1 0 0 1 1.415-1.415L14 18.585l6.293-6.293a1.001 1.001 0 0 1 1.415 0ZM29 16A13 13 0 1 1 16 3a13.014 13.014 0 0 1 13 13Zm-2 0a11 11 0 1 0-11 11 11.012 11.012 0 0 0 11-11Z"/></svg>
+				<h2>Success note</h2>
+			</div>
+			<div class="note__body">
+				<p>Main profile successfully updated.</p>
+			</div>
+		</div>
+		<div class="l-box note note--warning" role="status">
+			<div class="note__header">
+				<svg xmlns="http://www.w3.org/2000/svg" class="icon icon--24" fill="none" viewBox="0 0 32 32" width="24" height="24"><path fill="currentColor" fill-rule="evenodd" d="M16 12a1 1 0 0 1 1 1v5a1 1 0 1 1-2 0v-5a1 1 0 0 1 1-1Z" clip-rule="evenodd"/><path fill="currentColor" fill-rule="evenodd" d="M14.501 3.403a2.987 2.987 0 0 1 4.09 1.098l.002.002L29.59 23.5a3 3 0 0 1-2.588 4.5H4.996a3 3 0 0 1-2.587-4.5L13.407 4.503l.001-.002a2.987 2.987 0 0 1 1.093-1.098ZM14.275 5l.865.501L4.141 24.5a1.001 1.001 0 0 0 .861 1.5h21.996a1 1 0 0 0 .861-1.5L16.857 5.497a.987.987 0 0 0-1.714 0L14.275 5Z" clip-rule="evenodd"/><path fill="currentColor" d="M16 24a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/></svg>
+				<h2>Warning note</h2>
+			</div>
+			<div class="note__body">
+				<p>We could not detect your affiliation based on your email address. Please select your affiliation below or <a href="javascript:void(0);">go back to use your corporate email address</a>.</p>
+			</div>
+		</div>
+		<div class="l-box note note--error" role="alert">
+			<div class="note__header">
+				<svg xmlns="http://www.w3.org/2000/svg" class="icon icon--24" fill="none" viewBox="0 0 32 32" width="24" height="24"><path fill="currentColor" d="M15 17v-7a1 1 0 0 1 2 0v7a1 1 0 1 1-2 0Zm14-5.556v9.112a1.982 1.982 0 0 1-.586 1.414l-6.444 6.444a1.982 1.982 0 0 1-1.414.586h-9.112a1.982 1.982 0 0 1-1.414-.586L3.586 21.97A1.982 1.982 0 0 1 3 20.556v-9.112a1.983 1.983 0 0 1 .586-1.414l6.444-6.444A1.983 1.983 0 0 1 11.444 3h9.112a1.983 1.983 0 0 1 1.414.586l6.444 6.444A1.983 1.983 0 0 1 29 11.444Zm-2 0L20.556 5h-9.112L5 11.444v9.112L11.444 27h9.112L27 20.556v-9.112ZM16 20a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z"/></svg>
+				<h2>Error note</h2>
+			</div>
+			<div class="note__body">
+				<p>There's already a file with that name. Please try another name.</p>
+			</div>
+		</div>
+	</main>
+</div>
+</body>
+
+</html>

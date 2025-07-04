@@ -1006,8 +1006,8 @@ amplify-table-sort col.js-sorted {
 
 .autocomplete__option--focused,
 .autocomplete__option:hover {
-  background-color: #063a69;
-  border-color: #063a69;
+  background-color: #411ae5;
+  border-color: #411ae5;
 }
 
 @media (width >= 641px) {
@@ -1137,7 +1137,7 @@ amplify-table-sort col.js-sorted {
 }
 .component--tabs a[role=tab][aria-selected=true] {
   background-color: #c6c6c6;
-  border-bottom: solid 0.1875rem #063a69;
+  border-bottom: solid 0.1875rem #411ae5;
   text-decoration: none;
 }
 .component--tabs a[role=tab]:focus {
