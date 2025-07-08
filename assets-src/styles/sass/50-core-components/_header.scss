@@ -3,3 +3,8 @@
 \*------------------------------------*/
 @use '../10-settings' as *;
 @use '../20-tools' as *;
+
+.global-header {
+    line-height: normal;
+    padding-block: 20px;
+}

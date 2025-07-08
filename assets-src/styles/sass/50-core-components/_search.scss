@@ -4,6 +4,11 @@
 @use '../10-settings' as *;
 @use '../20-tools' as *;
 
-.search-form {
-    --sidebar-main-width: 70%;
+.global-search {
+    --cluster-gap: 0;
+
+    /* Max width magic number: available horizontal space at 320px viewport, minus width of submit button */
+    [type="search"] {
+        inline-size: rem(228);
+    }
 }

@@ -46,6 +46,10 @@ nav :where(ul, ol),
 	}
 }
 
+nav :where(ul, ol) li {
+    max-width: unset;
+}
+
 
 /**
 Description lists / Definition lists

@@ -18,12 +18,6 @@
 .global-footer {
 	grid-row: 2 / 3; /* 1 */
 	-ms-grid-row-span: 1; /* 2 */
-	padding-block: rem(20) rem(25);
-	padding-inline: 0;
-
-	.l-center {
-		@include stack(1rem);
-	}
 
 	a,
 	.copyright {
@@ -39,4 +33,13 @@
 			color: $off-black;
 		}
 	}
+}
+
+.global-footer .l-sidebar {
+    padding-block: 50px 20px;
+    padding-inline: 20px;
+}
+
+.global-footer__credits {
+    padding: 20px;
 }

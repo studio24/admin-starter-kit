@@ -48,15 +48,6 @@
     > ul {
         background-color: $off-white;
         inline-size: 100%;
-        inset-inline-start: 0;
-        position: absolute;
-
-        @include mq($bp-tab-portrait) {
-            align-items: center;
-            display: flex;
-            inline-size: auto;
-            position: static;
-        }
     }
 
     > ul > li {
@@ -65,20 +56,9 @@
         }
     }
 
-    > ul > li + li {
-        @include mq($bp-tab-portrait) {
-            margin-inline-start: rem(5);
-        }
-    }
-
     [data-nav="submenu"] {
         background-color: $off-white;
         padding-inline-start: 0;
-
-        @include mq($bp-tab-portrait) {
-            inset-inline-start: 0;
-            position: absolute;
-        }
     }
 
     /* Prevent offscreen-submenus */

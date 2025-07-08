@@ -1,0 +1,21 @@
+/*------------------------------------*\
+    #Admin scaffold
+\*------------------------------------*/
+@use '../10-settings/index' as *;
+@use '../20-tools/index' as *;
+
+.admin-scaffold {
+    @include mq($bp-tab-landscape) {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        grid-template-rows: 1fr;
+    }
+}
+
+.admin-scaffold > * {
+    padding-inline: 20px;
+}
+
+#amplify-main .admin-scaffold > * {
+    padding-block: 20px;
+}

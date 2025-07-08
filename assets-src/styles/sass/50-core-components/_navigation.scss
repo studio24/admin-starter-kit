@@ -13,6 +13,10 @@ nav ul * + * {
     padding-inline-start: rem(20);
 }
 
+.global-nav {
+    padding-inline: 20px;
+}
+
 .global-nav a {
     color: $link-color;
     display: block;
@@ -27,5 +31,17 @@ nav ul * + * {
     &:active {
         color: $off-black;
         outline-width: 0; /* 2 */
+    }
+}
+
+/* The navigation in the header */
+.secondary-nav,
+.secondary-nav > ul {
+    align-items: center;
+}
+
+.secondary-nav {
+    @include mq($bp-tab-landscape) {
+        justify-content: flex-end;
     }
 }

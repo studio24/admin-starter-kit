@@ -3,7 +3,8 @@
 
     1. If a link breaks over multiple lines, copy focus styles over all lines.
     See https://developer.mozilla.org/en-US/docs/Web/CSS/box-decoration-break
-    2. Windows High Contrast/forced-color modes tend to eliminate background-color and box-shadow.
+    2. New stacking context so focus styles not obstructed by overlapping elements
+    3. Windows High Contrast/forced-color modes tend to eliminate background-color and box-shadow.
     We retain an outline - even if it's transparent - to ensure an accessible focus indicator.
 \*------------------------------------*/
 @use '../10-settings' as *;
@@ -12,9 +13,11 @@
 :focus {
     box-decoration-break: clone; /* 1 */
     box-shadow: 0 0 0 4px $black;
-    outline: 2px solid $focus-color; /* 2 */
-    outline-offset: 0; /* 2 */
+    outline: 2px solid $focus-color; /* 3 */
+    outline-offset: 0; /* 3 */
+    position: relative; /* 2 */
     text-decoration: none;
+    z-index: 1; /* 2 */
 }
 
 /**
