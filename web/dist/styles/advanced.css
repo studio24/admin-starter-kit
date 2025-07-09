@@ -43,7 +43,6 @@ Accent
 Neutrals
  */
 /* 1 */
-/* 1 */
 /**
 Links
  */
@@ -296,7 +295,7 @@ amplify-table-sort col.js-sorted {
   display: none;
 }
 .js .global-nav > ul {
-  background-color: #fcfcfc;
+  background-color: #fff;
   inline-size: 100%;
 }
 @media screen and (min-width: 48em) {
@@ -305,7 +304,7 @@ amplify-table-sort col.js-sorted {
   }
 }
 .js .global-nav [data-nav=submenu] {
-  background-color: #fcfcfc;
+  background-color: #fff;
   -webkit-padding-start: 0;
           padding-inline-start: 0;
 }
@@ -594,7 +593,7 @@ amplify-table-sort col.js-sorted {
 }
 
 .autocomplete__input--focused {
-  background-color: #fcfcfc;
+  background-color: #fff;
   box-shadow: 0 0 0 4px #000;
   outline: 2px solid #ffdc00; /* 2 */
   outline-offset: 0; /* 2 */

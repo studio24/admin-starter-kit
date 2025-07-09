@@ -8,20 +8,20 @@
 
 .amplify .global-header {
 	background-color: $off-black;
-	color: $off-white;
+	color: $white;
 	padding-block: rem(10);
 }
 
 .amplify .global-header__link {
 	@include text-25;
 
-	color: $off-white;
+	color: $white;
 	padding-block: rem(5);
 	text-decoration: none;
 
 	&:hover,
 	&:visited {
-		color: $off-white;
+		color: $white;
 	}
 
 	&:hover {
