@@ -5,10 +5,7 @@
 @use '../20-tools' as *;
 
 .global-search {
-    --cluster-gap: 0;
-
-    /* Max width magic number: available horizontal space at 320px viewport, minus width of submit button */
-    [type="search"] {
-        inline-size: rem(228);
-    }
+    display: flex;
+    inline-size: 100%;
+    max-inline-size: 280px;
 }
