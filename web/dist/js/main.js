@@ -570,9 +570,9 @@ function domLoadedActions() {
   (0,_main_form_error_summary_js__WEBPACK_IMPORTED_MODULE_3__.formErrorSummary)();
 
   /* Create a navDoubleLevel object and initiate double-level navigation */
-  const navExampleDoubleSimple = document.querySelector('[data-component="nav-double"]');
-  if (navExampleDoubleSimple) {
-    let siteNav = new _main_nav_double_level_js__WEBPACK_IMPORTED_MODULE_4__.navDoubleLevel(navExampleDoubleSimple, {});
+  const navDoubleSimple = document.querySelector('[data-component="nav-double"]');
+  if (navDoubleSimple) {
+    let siteNav = new _main_nav_double_level_js__WEBPACK_IMPORTED_MODULE_4__.navDoubleLevel(navDoubleSimple, {});
     siteNav.init();
   }
 }

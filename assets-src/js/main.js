@@ -11,10 +11,10 @@ function domLoadedActions() {
 	formErrorSummary();
 
 	/* Create a navDoubleLevel object and initiate double-level navigation */
-	const navExampleDoubleSimple = document.querySelector('[data-component="nav-double"]');
+	const navDoubleSimple = document.querySelector('[data-component="nav-double"]');
 
-	if (navExampleDoubleSimple) {
-		let siteNav = new navDoubleLevel(navExampleDoubleSimple,{});
+	if (navDoubleSimple) {
+		let siteNav = new navDoubleLevel(navDoubleSimple,{});
 		siteNav.init();
 	}
 }
