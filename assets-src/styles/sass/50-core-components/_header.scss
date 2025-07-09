@@ -5,6 +5,18 @@
 @use '../20-tools' as *;
 
 .global-header {
+    background-color: $admin-bg;
+    color: $white;
     line-height: normal;
     padding-block: 20px;
+
+    a {
+        color: inherit;
+
+        &:visited,
+        &:hover,
+        &:active {
+            color: inherit;
+        }
+    }
 }

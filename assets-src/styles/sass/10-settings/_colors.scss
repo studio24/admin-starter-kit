@@ -58,9 +58,16 @@ $neutral-30: #c6c6c6;
 $neutral-20: #e0e0e0;
 $neutral-10: #f4f4f4;
 
-$off-black: #252525; /* 1 */
+$off-black: $neutral-90; /* 1 */
 $black: #000;
 $white: #fff;
+
+
+
+/**
+Admin theme
+ */
+$admin-bg: $neutral-90;
 
 
 

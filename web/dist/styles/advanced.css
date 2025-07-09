@@ -44,6 +44,9 @@ Neutrals
  */
 /* 1 */
 /**
+Admin theme
+ */
+/**
 Links
  */
 /**
@@ -276,6 +279,10 @@ amplify-table-sort col.js-sorted {
 .js .global-nav [data-trigger] > * {
   pointer-events: none;
 }
+.js .global-nav [data-trigger=mobile-nav] {
+  -webkit-margin-start: auto;
+          margin-inline-start: auto;
+}
 .js .global-nav [data-trigger=mobile-nav] > * {
   pointer-events: none;
 }
@@ -295,7 +302,6 @@ amplify-table-sort col.js-sorted {
   display: none;
 }
 .js .global-nav > ul {
-  background-color: #fff;
   inline-size: 100%;
 }
 @media screen and (min-width: 48em) {
@@ -304,7 +310,6 @@ amplify-table-sort col.js-sorted {
   }
 }
 .js .global-nav [data-nav=submenu] {
-  background-color: #fff;
   -webkit-padding-start: 0;
           padding-inline-start: 0;
 }
@@ -633,7 +638,7 @@ amplify-table-sort col.js-sorted {
 
 .autocomplete__option--no-results {
   background-color: #c6c6c6;
-  color: #252525;
+  color: #262626;
 }
 
 .autocomplete__hint,
@@ -690,7 +695,7 @@ amplify-table-sort col.js-sorted {
   border: 0;
   border-bottom: solid 0.1875rem transparent;
   border-radius: 0;
-  color: #252525;
+  color: #262626;
   display: block;
   margin-bottom: 0;
   padding: 0.625em 0.9375em;
@@ -702,7 +707,7 @@ amplify-table-sort col.js-sorted {
   background-color: #c6c6c6;
   border: 0;
   border-bottom: solid 0.1875rem #c6c6c6;
-  color: #252525;
+  color: #262626;
 }
 .component--tabs a[role=tab][aria-selected=true] {
   background-color: #c6c6c6;

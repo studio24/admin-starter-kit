@@ -16,8 +16,11 @@
 @use '../20-tools' as *;
 
 .global-footer {
+    background-color: $admin-bg;
+    color: $white;
 	grid-row: 2 / 3; /* 1 */
 	-ms-grid-row-span: 1; /* 2 */
+    line-height: normal;
 
 	a,
 	.copyright {
@@ -25,12 +28,12 @@
 	}
 
 	a {
-		color: $off-black;
+		color: inherit;
 
 		&:visited,
 		&:hover,
 		&:active {
-			color: $off-black;
+			color: inherit;
 		}
 	}
 }
@@ -41,5 +44,6 @@
 }
 
 .global-footer__credits {
+    background-color: $neutral-70;
     padding: 20px;
 }

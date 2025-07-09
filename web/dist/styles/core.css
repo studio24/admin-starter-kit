@@ -82,6 +82,9 @@ Neutrals
  */
 /* 1 */
 /**
+Admin theme
+ */
+/**
 Links
  */
 /**
@@ -352,11 +355,16 @@ Typographical styles for fonts are in 30-base/_typography.scss
  */
 body {
   background-color: #fff;
-  color: #252525;
+  color: #262626;
   display: grid; /* 1 */
   grid-template-columns: 100%;
   grid-template-rows: 1fr auto; /* 1 */
   overflow-x: hidden; /* 2 */
+}
+@media screen and (min-width: 64em) {
+  body {
+    background-image: linear-gradient(90deg, #262626, #262626 300px, #fff 300px, #fff);
+  }
 }
 
 /*------------------------------------*\
@@ -578,7 +586,7 @@ small,
 }
 
 .small-caps {
-  text-shadow: 0 0 0 #252525;
+  text-shadow: 0 0 0 #262626;
   text-transform: uppercase;
 }
 
@@ -769,7 +777,7 @@ button[disabled],
 .button.js-disabled {
   background-color: #8d8d8d;
   border-color: #8d8d8d;
-  color: #252525;
+  color: #262626;
   cursor: not-allowed;
 }
 
@@ -2086,8 +2094,16 @@ media query.
     #Global header
 \*------------------------------------*/
 .global-header {
+  background-color: #262626;
+  color: #fff;
   line-height: normal;
   padding-block: 20px;
+}
+.global-header a {
+  color: inherit;
+}
+.global-header a:visited, .global-header a:hover, .global-header a:active {
+  color: inherit;
 }
 
 /*------------------------------------*\
@@ -2118,12 +2134,13 @@ media query.
   align-items: center;
   display: flex;
   justify-content: center;
-  padding: 5px;
 }
 
 .logo__inner > * {
+  background-color: #fff;
   inline-size: auto;
   max-block-size: 50px;
+  padding: 5px;
 }
 
 /*------------------------------------*\
@@ -2148,21 +2165,23 @@ nav ul * + * {
 }
 
 .global-nav {
+  background-color: #262626;
+  color: #fff;
   padding-inline: 20px;
 }
 
 .global-nav a {
-  color: #1371c2;
+  color: inherit;
   display: block;
   line-height: normal;
   padding: 0.5625rem 0.875rem;
 }
 .global-nav a:hover {
-  color: #0b80e5;
+  color: inherit;
   outline-width: 0; /* 2 */
 }
 .global-nav a:active {
-  color: #252525;
+  color: inherit;
   outline-width: 0; /* 2 */
 }
 
@@ -2229,12 +2248,12 @@ Separator chevron - see https://codepen.io/jonneal/pen/kptBs
 }
 
 .breadcrumbs a {
-  color: #252525;
+  color: #262626;
   display: block;
   padding-block: 0.3125rem;
 }
 .breadcrumbs a:visited, .breadcrumbs a:hover, .breadcrumbs a:active {
-  color: #252525;
+  color: #262626;
 }
 
 .breadcrumbs [aria-current] {
@@ -2242,7 +2261,7 @@ Separator chevron - see https://codepen.io/jonneal/pen/kptBs
   text-decoration: none;
 }
 .breadcrumbs [aria-current]:focus {
-  outline-color: #252525;
+  outline-color: #262626;
 }
 
 /*------------------------------------*\
@@ -2408,7 +2427,7 @@ Separator chevron - see https://codepen.io/jonneal/pen/kptBs
 
 .note__header {
   align-items: center;
-  background-color: #252525;
+  background-color: #262626;
   color: #fff;
   column-gap: 0.625rem;
   display: flex;
@@ -2524,7 +2543,7 @@ Separator chevron - see https://codepen.io/jonneal/pen/kptBs
 
 .card__link {
   border: 0;
-  color: #252525;
+  color: #262626;
   text-decoration: none;
 }
 .card__link:hover {
@@ -2620,6 +2639,9 @@ Separator chevron - see https://codepen.io/jonneal/pen/kptBs
   inline-size: 100%;
   max-inline-size: 280px;
 }
+.global-search [type=search] {
+  background-color: #fff;
+}
 
 /*------------------------------------*\
     #Amplify CSS reset
@@ -2691,8 +2713,11 @@ Separator chevron - see https://codepen.io/jonneal/pen/kptBs
 
 \*------------------------------------*/
 .global-footer {
+  background-color: #262626;
+  color: #fff;
   grid-row: 2/3; /* 1 */
   -ms-grid-row-span: 1; /* 2 */
+  line-height: normal;
 }
 .global-footer a,
 .global-footer .copyright {
@@ -2700,10 +2725,10 @@ Separator chevron - see https://codepen.io/jonneal/pen/kptBs
   line-height: 1.5;
 }
 .global-footer a {
-  color: #252525;
+  color: inherit;
 }
 .global-footer a:visited, .global-footer a:hover, .global-footer a:active {
-  color: #252525;
+  color: inherit;
 }
 
 .global-footer .l-sidebar {
@@ -2712,6 +2737,7 @@ Separator chevron - see https://codepen.io/jonneal/pen/kptBs
 }
 
 .global-footer__credits {
+  background-color: #525252;
   padding: 20px;
 }
 
@@ -2737,7 +2763,7 @@ Separator chevron - see https://codepen.io/jonneal/pen/kptBs
     Used purely for the static Amplify site
 \*------------------------------------*/
 .amplify .global-header {
-  background-color: #252525;
+  background-color: #262626;
   color: #fff;
   padding-block: 0.625rem;
 }
@@ -2780,8 +2806,8 @@ Separator chevron - see https://codepen.io/jonneal/pen/kptBs
 }
 
 .amplify .current .global-nav__link {
-  border-block-end-color: #252525;
-  color: #252525;
+  border-block-end-color: #262626;
+  color: #262626;
 }
 .amplify .current .global-nav__link:hover {
   text-decoration: none;
@@ -2799,10 +2825,10 @@ Separator chevron - see https://codepen.io/jonneal/pen/kptBs
 }
 
 .amplify .nav-secondary__link[aria-current] {
-  color: #252525;
+  color: #262626;
 }
 .amplify .nav-secondary__link[aria-current]::before {
-  background-color: #252525;
+  background-color: #262626;
   block-size: 1.5rem;
   content: "";
   inline-size: 4px;

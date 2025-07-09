@@ -330,7 +330,7 @@ const navDoubleLevel = function (menu, options) {
   function mobileToggleSetup() {
     mobileToggle.innerHTML += settings.mobileIcon;
     mobileToggle.setAttribute('aria-expanded', 'false');
-    mobileToggle.style.display = 'inline-flex';
+    mobileToggle.style.display = 'flex';
     let mqValue = settings.breakpoint / 16;
     let mq = window.matchMedia('(min-width: ' + mqValue + 'em)');
     mq.addListener(WidthChange);
@@ -340,7 +340,7 @@ const navDoubleLevel = function (menu, options) {
     function WidthChange(mq) {
       if (!mq.matches) {
         mobileToggle.setAttribute('aria-expanded', 'false');
-        mobileToggle.style.display = 'inline-flex';
+        mobileToggle.style.display = 'flex';
       } else {
         mobileToggle.setAttribute('aria-expanded', 'true');
         mobileToggle.style.display = 'none';

@@ -8,4 +8,8 @@
     display: flex;
     inline-size: 100%;
     max-inline-size: 280px;
+
+    [type="search"] {
+        background-color: $white;
+    }
 }

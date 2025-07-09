@@ -14,22 +14,24 @@ nav ul * + * {
 }
 
 .global-nav {
+    background-color: $admin-bg;
+    color: $white;
     padding-inline: 20px;
 }
 
 .global-nav a {
-    color: $link-color;
+    color: inherit;
     display: block;
     line-height: normal;
     padding: rem(9) rem(14);
 
     &:hover {
-        color: $link-color--hover;
+        color: inherit;
         outline-width: 0; /* 2 */
     }
 
     &:active {
-        color: $off-black;
+        color: inherit;
         outline-width: 0; /* 2 */
     }
 }

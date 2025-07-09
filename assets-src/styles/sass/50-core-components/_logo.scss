@@ -18,10 +18,11 @@
     align-items: center;
     display: flex;
     justify-content: center;
-    padding: 5px;
 }
 
 .logo__inner > * {
+    background-color: $white;
     inline-size: auto;
     max-block-size: 50px;
+    padding: 5px;
 }
