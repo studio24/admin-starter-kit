@@ -316,17 +316,6 @@ amplify-table-sort col.js-sorted {
 /*------------------------------------*\
     #Navigation advanced: double level
 
-    There are styles for two versions of navigation here:
-
-    - A "simple" version, where sub menus expand vertically when opened
-    on smaller screens.
-
-    - A version where sub menus have a visible "back" button to close them
-     on smaller screens because when open they are absolutely positioned
-     to cover their parent control.
-
-    Make sure to comment out whichever version is not needed in your project.
-
     N.B. aria-expanded attribute is managed by JS
 \*------------------------------------*/
 /* stylelint-disable no-descending-specificity */
