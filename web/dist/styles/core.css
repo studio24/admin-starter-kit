@@ -361,12 +361,18 @@ body {
   grid-template-rows: 1fr auto; /* 1 */
   overflow-x: hidden; /* 2 */
 }
-@media screen and (min-width: 64em) {
-  body {
-    background-image: linear-gradient(90deg, #262626, #262626 300px, #fff 300px, #fff);
+
+/**
+Check support for :has() before using it to scope the background image for
+full height columns to pages using `div.admin-scaffold`
+ */
+@supports selector(:has(*)) {
+  @media screen and (min-width: 64em) {
+    body:has(div.admin-scaffold) {
+      background-image: linear-gradient(90deg, #525252, #525252 300px, #fff 300px, #fff);
+    }
   }
 }
-
 /*------------------------------------*\
     #Amplify CSS reset
 
@@ -2165,7 +2171,7 @@ nav ul * + * {
 }
 
 .global-nav {
-  background-color: #262626;
+  background-color: #525252;
   color: #fff;
   padding-inline: 20px;
 }
