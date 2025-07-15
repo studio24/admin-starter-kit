@@ -76,7 +76,7 @@ To make changes to code first work on a branch and create a Pull Request to merg
 
 ## Built with
 
-- [Amplify v10](https://amplify.studio24.net/amplify/) - Front-end starter kit
+- [Amplify](https://amplify.studio24.net/amplify/) - Front-end starter kit
 
 ## Credits
 

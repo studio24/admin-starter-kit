@@ -18,7 +18,9 @@
     z-index: 999;
 
 	&:focus {
-		inset-block-start: 2px;
-		inset-inline-start: 2px;
+        box-shadow: inset 0 0 0 2px $black;
+        color: $black;
+		inset-block-start: 5px;
+		inset-inline-start: 5px;
 	}
 }

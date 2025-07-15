@@ -53,7 +53,7 @@ Responsive tables:
         margin-block: rem(16);
         max-inline-size: 100% !important;
 
-        &[role][tabindex] {
+        &[tabindex] {
             animation: scroll-shadow-inset linear; /* 1 */
             animation-timeline: scroll( self inline ); /* 1 */
             overflow: auto;

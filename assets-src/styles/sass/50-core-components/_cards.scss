@@ -9,50 +9,34 @@
 @use '../20-tools' as *;
 
 .card {
-    --box-border-clr: transparent;
+    --_card-bg: var(--card-bg, transparent);
+    --_card-border-clr: var(--card-border-clr, #{$neutral-30});
+    --_card-border-width: var(--card-border-width, 2px);
+    --_card-radius: var(--card-radius, 0);
 
-	background-color: $white;
-	border-radius: rem(4);
-	box-shadow: -1px 1px 4px 0 rgba(55 70 95 / 12%);
-	display: flex;
-	flex-direction: column;
-	overflow: hidden;
+    background-color: var(--_card-bg);
+    border: solid var(--_card-border-clr) var(--_card-border-width);
+    border-radius: var(--_card-radius);
+    display: flex;
+    flex-direction: column;
 }
 
 
 .card__text {
-	@include stack;
-
 	flex-grow: 1;
 	order: 1;
-	padding-block-start: 1rem;
 }
 
-
-/**
-"Neat cards": for a row of cards of equal height and with the last item
-(e.g. CTA or tag list) always pushed to the bottom edge.
- */
-.card--neat {
-	block-size: 100%;
+.card__text > * {
+    margin-block: 0;
 }
 
-.card--neat .card__text {
-	// Minimum spacing between the penultimate and last child elements.
-	// Matches the measure used for the stack mixin on `.card__text`
-	> :nth-last-child(2) {
-		margin-block-end: 1em;
-	}
-
-	// Align the last child element to the bottom of the card.
-	> :last-child {
-		margin-block-start: auto;
-	}
+.card__text > * + * {
+    margin-block-start: 1rem;
 }
 
 
 .card__text > a:not([class]) {
-	align-self: flex-start; /* 1 */
 	margin-block-start: rem(6);
 	padding-block: rem(10);
 }
@@ -60,17 +44,10 @@
 
 .card__heading {
 	@include text-25;
-
-    margin-block-start: 0;
 }
 
 
 .card__link {
 	border: 0;
-	color: $off-black;
-	text-decoration: none;
-
-	&:hover {
-		text-decoration: underline;
-	}
+	color: inherit;
 }
