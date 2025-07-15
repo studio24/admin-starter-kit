@@ -53,21 +53,21 @@ Install project dependencies:
 
 ````bash
 # Switch your version of Node to the correct version for this project (see `.nvmrc`)
-nvm use
+ddev nvm use
 
-npm install
+ddev npm install
 ````
 
 Build front-end assets:
 
 ````bash
-npm run build
+ddev npm run build
 ````
 
 Watch for changes:
 
 ````bash
-npm run watch
+ddev npm run watch
 ````
 
 ## Making changes
