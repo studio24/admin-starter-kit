@@ -2500,6 +2500,11 @@ Separator chevron - see https://codepen.io/jonneal/pen/kptBs
           margin-block-start: 0;
 }
 
+.panel > *:last-child {
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
+}
+
 /*------------------------------------*\
     #Amplify CSS reset
 
