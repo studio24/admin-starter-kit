@@ -5,24 +5,24 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Dashboard - [Site name]</title>
+	<title>A sortable table - [Site name]</title>
 
-	<link rel="stylesheet" href="../dist/styles/core.css" media="screen">
+	<link rel="stylesheet" href="dist/styles/core.css" media="screen">
 
 	<!--
 	Print (Edge doesn't apply to print otherwise)
 	Edge, Chrome 39+, Opera 26+, Safari 9+, iOS 9+, Android ~5+, Android UCBrowser ~11.8+
 	FF 47+
 	-->
-	<link rel="stylesheet" id="advanced-stylesheet" href="../dist/styles/advanced.min.css" media="
+	<link rel="stylesheet" id="advanced-stylesheet" href="dist/styles/advanced.min.css" media="
 	only print,
 	only all and (pointer: fine), only all and (pointer: coarse), only all and (pointer: none),
 	only all and (min--moz-device-pixel-ratio:0) and (display-mode:browser), (min--moz-device-pixel-ratio:0) and (display-mode:fullscreen)
 	">
 
-	<link rel="stylesheet" href="../dist/styles/print.css" media="print">
+	<link rel="stylesheet" href="dist/styles/print.css" media="print">
 
-	<script src="../dist/js/libraries/fontfaceobserver.js"></script>
+	<script src="dist/js/libraries/fontfaceobserver.js"></script>
 
 	<script>
 		let myFont = new FontFaceObserver('Nunito');
@@ -56,7 +56,7 @@
 		<div class="admin-scaffold">
 			<div class="logo">
 				<div class="logo__inner">
-					<img src="../dist/svg/logoipsum-logo-6.svg" role="img" alt="LogoIpsum">
+					<img src="dist/svg/logoipsum-logo-6.svg" role="img" alt="LogoIpsum">
 				</div>
 			</div>
 			<nav class="l-cluster secondary-nav" aria-label="Secondary">
@@ -83,13 +83,13 @@
 				</button>
 				<ul>
 					<li>
-						<a href="dashboard.html" aria-current="true">Dashboard</a>
+						<a href="dashboard.html">Dashboard</a>
 					</li>
 					<li>
 						<a href="information.html">Information page</a>
 					</li>
 					<li>
-						<a href="sortable-table.html">Sortable table</a>
+						<a href="sortable-table.html" aria-current="true">Sortable table</a>
 					</li>
 					<li>
 						<a href="javascript:void(0);">Clients</a>
@@ -118,135 +118,41 @@
 				</ul>
 			</nav>
 			<div class="page">
-				<h1>Dashboard</h1>
-				<div class="l-autogrid">
-					<div class="l-box card">
-						<div class="card__text">
-							<h2 class="card__heading">
-								<a href="javascript: void(0);" class="card__link">Card heading</a></h2>
-							<p>Card description</p>
-						</div>
+				<h1>Sortable table</h1>
+				<amplify-table-sort>
+					<div role="region" aria-labelledby="caption1" tabindex="0" data-component="table-wrap">
+						<table data-component="sortable-table">
+							<caption id="caption1">A sortable table, use column header buttons to sort</caption>
+							<colgroup>
+								<col>
+								<col>
+								<col>
+							</colgroup>
+							<thead>
+							<tr>
+								<th data-type="string" scope="col">Column header 1</th>
+								<th data-type="string" scope="col">Column header 2</th>
+								<th data-type="number" scope="col">Column header 3</th>
+								<th data-type="no-sort" scope="col">Sorting disabled</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<td>AAA</td>
+								<td>BBB</td>
+								<td>9</td>
+								<td>CCC</td>
+							</tr>
+							<tr>
+								<td>BBB</td>
+								<td>AAA</td>
+								<td>10</td>
+								<td>CCC</td>
+							</tr>
+							</tbody>
+						</table>
 					</div>
-					<div class="l-box card">
-						<div class="card__text">
-							<h2 class="card__heading">
-								<a href="javascript: void(0);" class="card__link">Card heading</a></h2>
-							<p>Card description</p>
-						</div>
-					</div>
-					<div class="l-box card">
-						<div class="card__text">
-							<h2 class="card__heading">
-								<a href="javascript: void(0);" class="card__link">Card heading</a></h2>
-							<p>Card description</p>
-						</div>
-					</div>
-					<div class="l-box card">
-						<div class="card__text">
-							<h2 class="card__heading">
-								<a href="javascript: void(0);" class="card__link">Card heading</a></h2>
-							<p>Card description</p>
-						</div>
-					</div>
-					<div class="l-box card">
-						<div class="card__text">
-							<h2 class="card__heading">
-								<a href="javascript: void(0);" class="card__link">Card heading</a></h2>
-							<p>Card description</p>
-						</div>
-					</div>
-				</div>
-				<h2>A heading introducing some cards</h2>
-				<p>Because these cards were introduced by a level-2 heading, they need to use a level-3 heading. There is no visual difference.</p>
-				<div class="l-autogrid">
-					<div class="l-box card">
-						<div class="card__text">
-							<h3 class="card__heading">
-								<a href="javascript: void(0);" class="card__link">Card heading</a></h3>
-							<p>Card description</p>
-						</div>
-					</div>
-					<div class="l-box card">
-						<div class="card__text">
-							<h3 class="card__heading">
-								<a href="javascript: void(0);" class="card__link">Card heading</a></h3>
-							<p>Card description</p>
-						</div>
-					</div>
-					<div class="l-box card">
-						<div class="card__text">
-							<h3 class="card__heading">
-								<a href="javascript: void(0);" class="card__link">Card heading</a></h3>
-							<p>Card description</p>
-						</div>
-					</div>
-					<div class="l-box card">
-						<div class="card__text">
-							<h3 class="card__heading">
-								<a href="javascript: void(0);" class="card__link">Card heading</a></h3>
-							<p>Card description</p>
-						</div>
-					</div>
-					<div class="l-box card">
-						<div class="card__text">
-							<h3 class="card__heading">
-								<a href="javascript: void(0);" class="card__link">Card heading</a></h3>
-							<p>Card description</p>
-						</div>
-					</div>
-				</div>
-				<h2>A table to display key information</h2>
-				<div tabindex="0" data-component="table-wrap">
-					<table>
-						<caption id="unique-caption-id">Members of the Spice Girls</caption>
-						<thead>
-						<tr>
-							<th scope="col">First name</th>
-							<th scope="col">Last name</th>
-							<th scope="col">Band name</th>
-							<th scope="col">Date of birth</th>
-							<th scope="col">Place of birth</th>
-						</tr>
-						</thead>
-						<tbody>
-						<tr>
-							<td>Emma</td>
-							<td>Bunton</td>
-							<td>Baby</td>
-							<td>21 January 1976</td>
-							<td>Watford, Hertfordshire</td>
-						</tr>
-						<tr>
-							<td>Geri</td>
-							<td>Halliwell</td>
-							<td>Ginger</td>
-							<td>6 August 1972</td>
-							<td>London</td>
-						</tr>
-						<tr>
-							<td>Victoria</td>
-							<td>Beckham</td>
-							<td>Posh</td>
-							<td>17 April 1974</td>
-							<td>Harlow, Essex</td>
-						</tr>
-						<tr>
-							<td>Melanie</td>
-							<td>Brown</td>
-							<td>Scary</td>
-							<td>29 May 1975</td>
-							<td>Leeds, Yorkshire</td>
-						</tr>
-						<tr>
-							<td>Melanie</td>
-							<td>Chisholm</td>
-							<td>Sporty</td>
-							<td>12 January 1974</td>
-							<td>Whiston, Merseyside</td>
-						</tr>
-						</tbody>
-					</table>
-				</div>
+				</amplify-table-sort>
 			</div>
 		</div>
 	</main>
@@ -268,5 +174,12 @@
 	</div>
 </footer>
 </body>
+<script>
+	if (document.documentElement.classList.contains('js')) {
+		const sortableTables = document.createElement('script');
+		sortableTables.src = '../../dist/js/sortable-tables.js';
+		document.querySelector('body').appendChild(sortableTables);
+	}
+</script>
 
 </html>
