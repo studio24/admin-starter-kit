@@ -2485,6 +2485,30 @@ Separator chevron - see https://codepen.io/jonneal/pen/kptBs
     - https://github.com/jensimmons/cssremedy/blob/master/css/remedy.css
 \*------------------------------------*/
 /*------------------------------------*\
+    #Panel
+
+    A container with a subtle coloured background to make it visually
+    distinct from the surrounding page.
+\*------------------------------------*/
+.panel {
+  --box-bg-clr: #f4f4f4;
+  --box-border-clr: #f4f4f4;
+}
+
+.panel > *:first-child {
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+}
+
+/*------------------------------------*\
+    #Amplify CSS reset
+
+    Inspiration:
+    - https://piccalil.li/blog/a-more-modern-css-reset/
+    - https://www.joshwcomeau.com/css/custom-css-reset/
+    - https://github.com/jensimmons/cssremedy/blob/master/css/remedy.css
+\*------------------------------------*/
+/*------------------------------------*\
     #Cards
 
     1. The `stack` mixin applies flexbox in the column direction,

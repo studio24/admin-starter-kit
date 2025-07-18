@@ -1,0 +1,17 @@
+/*------------------------------------*\
+    #Panel
+
+    A container with a subtle coloured background to make it visually
+    distinct from the surrounding page.
+\*------------------------------------*/
+@use '../10-settings' as *;
+@use '../20-tools' as *;
+
+.panel {
+    --box-bg-clr: #{$neutral-10};
+    --box-border-clr: #{$neutral-10};
+}
+
+.panel > *:first-child {
+    margin-block-start: 0;
+}
