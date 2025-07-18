@@ -36,12 +36,6 @@
 }
 
 
-.card__text > a:not([class]) {
-	margin-block-start: rem(6);
-	padding-block: rem(10);
-}
-
-
 .card__heading {
 	@include text-25;
 }
