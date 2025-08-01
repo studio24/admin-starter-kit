@@ -52,9 +52,6 @@ ddev launch
 Install project dependencies:
 
 ````bash
-# Switch your version of Node to the correct version for this project (see `.nvmrc`)
-ddev nvm use
-
 ddev npm install
 ````
 
