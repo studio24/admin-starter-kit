@@ -9,6 +9,7 @@
 @use '../20-tools' as *;
 
 .card {
+    --card-bg: white;
     --_card-bg: var(--card-bg, transparent);
     --_card-border-clr: var(--card-border-clr, #{$neutral-30});
     --_card-border-width: var(--card-border-width, 2px);

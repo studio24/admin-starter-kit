@@ -16,8 +16,8 @@
 @use '../20-tools' as *;
 
 .global-footer {
-    background-color: $admin-bg-primary;
-    color: $white;
+    background-color: $admin-bg-tertiary;
+    color: $neutral-10;
 	grid-row: 2 / 3; /* 1 */
 	-ms-grid-row-span: 1; /* 2 */
     line-height: normal;
@@ -39,11 +39,11 @@
 }
 
 .global-footer .l-sidebar {
-    padding-block: 50px 20px;
+    padding-block: 20px;
     padding-inline: 20px;
 }
 
 .global-footer__credits {
-    background-color: $admin-bg-secondary;
+    background-color: $admin-bg-primary;
     padding: 20px;
 }

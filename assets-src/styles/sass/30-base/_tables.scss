@@ -5,6 +5,7 @@
 @use '../20-tools' as *;
 
 table {
+    background-color: $white;
     border: 1px solid $border-color;
     border-collapse: collapse;
 	inline-size: 100%;
@@ -12,6 +13,7 @@ table {
 
 
 caption {
+    background-color: $white;
     border: 1px solid $border-color;
     border-block-end: 0;
 

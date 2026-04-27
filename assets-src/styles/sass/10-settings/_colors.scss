@@ -13,35 +13,31 @@
 /**
 Brand
  */
-$brand-100: #01172e;
-$brand-90: #032749;
-$brand-80: #063a69;
-$brand-70: #0c5492;
-$brand-60: #1371c2;
-$brand-55: #0b80e5;
-$brand-50: #1b90f4;
-$brand-40: #6faafc;
-$brand-30: #a9c7fd;
-$brand-20: #c9e3fe;
-$brand-10: #e9f6ff;
-
+$brand-100: #01172c;
+$brand-90: #022846;
+$brand-80: #033b65;
+$brand-70: #07558d;
+$brand-60: #0c73bc;
+$brand-50: #1391ec;
+$brand-40: #63acfd;
+$brand-30: #a4c8fe;
+$brand-20: #d0e1fe;
+$brand-10: #eff4ff;
 
 
 /**
 Accent
  */
-$accent-100: #350014;
-$accent-90: #530023;
-$accent-80: #760035;
-$accent-70: #a4004c;
-$accent-65: #bf0059;
-$accent-60: #da0067;
-$accent-50: #ff4085;
-$accent-40: #ff7fa3;
-$accent-30: #ffb1c3;
-$accent-20: #ffd6df;
-$accent-10: #fff1f4;
-
+$accent-100: #001a12;
+$accent-90: #002c21;
+$accent-80: #004232;
+$accent-70: #005e48;
+$accent-60: #007e62;
+$accent-50: #00a07d;
+$accent-40: #00be96;
+$accent-30: #00e0b1;
+$accent-20: #00fdc8;
+$accent-10: #cdffec;
 
 
 /**
@@ -69,7 +65,7 @@ Admin theme
  */
 $admin-bg-primary: $neutral-90;
 $admin-bg-secondary: $neutral-70;
-
+$admin-bg-tertiary: $neutral-80;
 
 
 /**
@@ -77,11 +73,11 @@ Links
  */
 $link-color:                    $brand-60;
 $link-color--active:			$brand-70;
-$link-color--hover:             $brand-55;
+$link-color--hover:             $brand-90;
 $link-color--visited:           $brand-80;
 
 $accent-color:					$accent-60;
-$accent-color--hover:			$accent-65;
+$accent-color--hover:			$accent-70;
 $accent-color--active:			$accent-80;
 
 

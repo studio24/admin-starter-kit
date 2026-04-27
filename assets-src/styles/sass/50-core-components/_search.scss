@@ -6,10 +6,12 @@
 
 .global-search {
     display: flex;
+    gap: rem(5);
     inline-size: 100%;
     max-inline-size: 280px;
 
     [type="search"] {
         background-color: $white;
+        border-color: $black;
     }
 }
