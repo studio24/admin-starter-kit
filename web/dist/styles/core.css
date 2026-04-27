@@ -2150,7 +2150,7 @@ media query.
 }
 
 .logo__inner > * {
-  background-color: #fff;
+  background-color: transparent;
   inline-size: auto;
   max-block-size: 50px;
   padding: 5px;
