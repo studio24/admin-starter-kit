@@ -51,10 +51,10 @@ button,
 input[type="submit"].button {
 	align-items: center;
 	align-self: start; /* 1 */
-	background-color: $accent-color;
-	border: solid 2px $accent-color;
+	background-color: $button-bg;
+	border: solid 2px $button-bg;
 	border-radius: rem(5);
-	color: $white;
+	color: white;
 	display: inline-flex;
 	justify-content: center;
 	min-block-size: rem(44); /* 2 */
@@ -62,14 +62,15 @@ input[type="submit"].button {
 	padding-inline: 0.75em;
 
 	&:hover {
-		background-color: $accent-color--hover;
-		border-color: $accent-color--hover;
+		background-color: $button-bg--hover;
+		border-color: $button-bg--hover;
+		color: white;
 	}
 
     &:active {
-        background-color: $accent-color--active;
-        border-color: $accent-color--active;
-        color: $white;
+        background-color: $button-bg--active;
+        border-color: $button-bg--active;
+		color: white;
     }
 }
 
@@ -82,18 +83,20 @@ input[type="submit"].button {
 
 /* Alternative button style with a distinct border */
 .button--alt.button--alt {
-	background-color: $white;
-	color: $accent-color;
+	background-color: transparent;
+	border-color: $link-color;
+	color: $link-color;
 
 	&:hover {
-		background-color: $accent-color--hover;
-		color: $white;
+		// background-color: $accent-10;
+		border-color: $black;
+		color: $black;
 	}
 
     &:active {
-        background-color: $accent-color--active;
-        border-color: $accent-color--active;
-        color: $white;
+		// background-color: $accent-10;
+		border-color: $black;
+        color: $black;
     }
 }
 

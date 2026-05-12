@@ -50,6 +50,12 @@ Admin theme
 Links
  */
 /**
+Buttons
+ */
+/**
+Buttons--alt
+ */
+/**
 Focus
  */
 /**
@@ -157,14 +163,14 @@ article {
   text-align: start;
 }
 .js [data-heading=collapsibles] button .js-collapsible-toggle {
-  color: #0c73bc;
+  color: #005e48;
 }
 .js [data-heading=collapsibles] button .js-collapsible-label {
   font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1.0625rem);
   line-height: 1.5;
 }
 .js [data-heading=collapsibles] button:hover .js-collapsible-heading {
-  color: #0c73bc;
+  color: #005e48;
 }
 .js [data-heading=collapsibles] button:hover .js-collapsible-label {
   text-decoration: underline;

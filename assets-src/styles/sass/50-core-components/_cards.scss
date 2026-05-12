@@ -9,11 +9,11 @@
 @use '../20-tools' as *;
 
 .card {
-    --card-bg: white;
+    --card-bg: #{$accent-10};
     --_card-bg: var(--card-bg, transparent);
-    --_card-border-clr: var(--card-border-clr, #{$neutral-30});
+    --_card-border-clr: var(--card-border-clr, #{$neutral-20});
     --_card-border-width: var(--card-border-width, 2px);
-    --_card-radius: var(--card-radius, 0);
+    --_card-radius: var(--card-radius, 5px);
 
     background-color: var(--_card-bg);
     border: solid var(--_card-border-clr) var(--_card-border-width);

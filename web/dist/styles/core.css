@@ -88,6 +88,12 @@ Admin theme
 Links
  */
 /**
+Buttons
+ */
+/**
+Buttons--alt
+ */
+/**
 Focus
  */
 /**
@@ -354,12 +360,16 @@ video {
 Typographical styles for fonts are in 30-base/_typography.scss
  */
 body {
-  background-color: #f4f4f4;
+  background-color: #fff;
   color: #262626;
   display: grid; /* 1 */
   grid-template-columns: 100%;
   grid-template-rows: 1fr auto; /* 1 */
   overflow-x: hidden; /* 2 */
+}
+
+div.page {
+  border-top: solid 1px #c6c6c6;
 }
 
 /**
@@ -369,7 +379,7 @@ full height columns to pages using `div.admin-scaffold`
 @supports selector(:has(*)) {
   @media screen and (min-width: 64em) {
     body:has(div.admin-scaffold) {
-      background-image: linear-gradient(90deg, #525252, #525252 300px, #f4f4f4 300px, #f4f4f4);
+      background-image: linear-gradient(90deg, #f4f4f4, #f4f4f4 300px, #c6c6c6 301px, #fff 302px, #fff);
     }
   }
 }
@@ -658,24 +668,24 @@ a:not([class]),
 a.with-icon--before,
 a.with-icon--after {
   border: none;
-  color: #0c73bc;
+  color: #005e48;
   cursor: pointer;
   text-decoration: underline; /* 1 */
 }
 a:not([class]):visited,
 a.with-icon--before:visited,
 a.with-icon--after:visited {
-  color: #033b65;
+  color: #004232;
 }
 a:not([class]):hover,
 a.with-icon--before:hover,
 a.with-icon--after:hover {
-  color: #022846;
+  color: #002c21;
 }
 a:not([class]):active,
 a.with-icon--before:active,
 a.with-icon--after:active {
-  color: #07558d;
+  color: #004232;
 }
 
 button {
@@ -697,10 +707,10 @@ button,
 input[type=submit].button {
   align-items: center;
   align-self: start; /* 1 */
-  background-color: #007e62;
-  border: solid 2px #007e62;
+  background-color: #005e48;
+  border: solid 2px #005e48;
   border-radius: 0.3125rem;
-  color: #fff;
+  color: white;
   display: inline-flex;
   justify-content: center;
   min-block-size: 2.75rem; /* 2 */
@@ -710,15 +720,16 @@ input[type=submit].button {
 button:hover,
 .button:hover,
 input[type=submit].button:hover {
-  background-color: #005e48;
-  border-color: #005e48;
+  background-color: #002c21;
+  border-color: #002c21;
+  color: white;
 }
 button:active,
 .button:active,
 input[type=submit].button:active {
-  background-color: #004232;
-  border-color: #004232;
-  color: #fff;
+  background-color: #002c21;
+  border-color: #002c21;
+  color: white;
 }
 
 /* Full-width buttons */
@@ -728,17 +739,17 @@ input[type=submit].button:active {
 
 /* Alternative button style with a distinct border */
 .button--alt.button--alt {
-  background-color: #fff;
-  color: #007e62;
+  background-color: transparent;
+  border-color: #005e48;
+  color: #005e48;
 }
 .button--alt.button--alt:hover {
-  background-color: #005e48;
-  color: #fff;
+  border-color: #000;
+  color: #000;
 }
 .button--alt.button--alt:active {
-  background-color: #004232;
-  border-color: #004232;
-  color: #fff;
+  border-color: #000;
+  color: #000;
 }
 
 /**
@@ -807,7 +818,7 @@ button[disabled],
     #Details and summary elements
 \*------------------------------------*/
 summary {
-  color: #0c73bc;
+  color: #005e48;
   cursor: pointer;
   display: inline-block;
   -webkit-padding-start: 1.5625rem;
@@ -832,7 +843,7 @@ summary::-webkit-details-marker {
   display: none;
 }
 summary:hover {
-  color: #022846;
+  color: #002c21;
 }
 
 [dir=rtl] summary::before {
@@ -2136,8 +2147,8 @@ media query.
     #Global header
 \*------------------------------------*/
 .global-header {
-  background-color: #262626;
-  color: #f4f4f4;
+  background-color: #f4f4f4;
+  color: #262626;
   line-height: normal;
   padding-block: 20px;
 }
@@ -2146,6 +2157,21 @@ media query.
 }
 .global-header a:visited, .global-header a:hover, .global-header a:active {
   color: inherit;
+}
+.global-header .button {
+  color: white;
+}
+.global-header .button:visited, .global-header .button:hover, .global-header .button:active {
+  color: white;
+}
+.global-header .button--alt {
+  color: #005e48;
+}
+.global-header .button--alt:visited {
+  color: #005e48;
+}
+.global-header .button--alt:hover, .global-header .button--alt:active {
+  color: #000;
 }
 
 /*------------------------------------*\
@@ -2204,8 +2230,10 @@ nav ul * + * {
 }
 
 .global-nav {
-  background-color: #525252;
-  color: #f4f4f4;
+  background-color: #f4f4f4;
+  -webkit-border-before: solid 1px #c6c6c6;
+          border-block-start: solid 1px #c6c6c6;
+  color: #262626;
   padding-inline: 20px;
 }
 
@@ -2552,11 +2580,11 @@ Separator chevron - see https://codepen.io/jonneal/pen/kptBs
     from stretching horizontally
 \*------------------------------------*/
 .card {
-  --card-bg: white;
+  --card-bg: #cdffec;
   --_card-bg: var(--card-bg, transparent);
-  --_card-border-clr: var(--card-border-clr, #c6c6c6);
+  --_card-border-clr: var(--card-border-clr, #e0e0e0);
   --_card-border-width: var(--card-border-width, 2px);
-  --_card-radius: var(--card-radius, 0);
+  --_card-radius: var(--card-radius, 5px);
   background-color: var(--_card-bg);
   border: solid var(--_card-border-clr) var(--_card-border-width);
   border-radius: var(--_card-radius);
@@ -2721,7 +2749,7 @@ Separator chevron - see https://codepen.io/jonneal/pen/kptBs
   text-decoration: underline;
 }
 .pagination__list a[href][aria-current] {
-  background-color: #0c73bc;
+  background-color: #005e48;
   color: #fff;
   font-weight: bold;
 }
@@ -2753,8 +2781,9 @@ Separator chevron - see https://codepen.io/jonneal/pen/kptBs
 
 \*------------------------------------*/
 .global-footer {
-  background-color: #393939;
-  color: #f4f4f4;
+  background-color: #f4f4f4;
+  border-top: solid 1px #c6c6c6;
+  color: #262626;
   grid-row: 2/3; /* 1 */
   -ms-grid-row-span: 1; /* 2 */
   line-height: normal;
@@ -2777,8 +2806,8 @@ Separator chevron - see https://codepen.io/jonneal/pen/kptBs
 }
 
 .global-footer__credits {
-  background-color: #262626;
-  padding: 20px;
+  background-color: #f4f4f4;
+  padding: 10px 20px;
 }
 
 /*------------------------------------*\
@@ -2831,7 +2860,7 @@ Separator chevron - see https://codepen.io/jonneal/pen/kptBs
 .amplify .global-nav__link {
   -webkit-border-after: solid 4px transparent;
           border-block-end: solid 4px transparent;
-  color: #0c73bc;
+  color: #005e48;
   display: block;
   font-size: 1.125rem;
   font-weight: bold;
@@ -2839,7 +2868,7 @@ Separator chevron - see https://codepen.io/jonneal/pen/kptBs
   text-decoration: none;
 }
 .amplify .global-nav__link:hover, .amplify .global-nav__link:visited {
-  color: #0c73bc;
+  color: #005e48;
 }
 .amplify .global-nav__link:hover {
   text-decoration: underline;
@@ -2854,7 +2883,7 @@ Separator chevron - see https://codepen.io/jonneal/pen/kptBs
 }
 
 .amplify .nav-secondary__link {
-  color: #0c73bc;
+  color: #005e48;
   display: block;
   padding-block: 0.5625rem;
   position: relative;

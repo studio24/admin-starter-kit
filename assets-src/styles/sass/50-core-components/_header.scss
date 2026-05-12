@@ -6,7 +6,7 @@
 
 .global-header {
     background-color: $admin-bg-primary;
-    color: $neutral-10;
+    color: $neutral-90;
     line-height: normal;
     padding-block: 20px;
 
@@ -17,6 +17,29 @@
         &:hover,
         &:active {
             color: inherit;
+        }
+    }
+
+    .button {
+        color: white;
+
+        &:visited,
+        &:hover,
+        &:active {
+            color: white;
+        }
+    }
+
+    .button--alt {
+        color: $link-color;
+
+        &:visited {
+            color: $link-color;
+        }
+
+        &:hover,
+        &:active {
+            color: $black;
         }
     }
 }

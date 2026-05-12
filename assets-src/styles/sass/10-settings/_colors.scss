@@ -63,22 +63,32 @@ $white: #fff;
 /**
 Admin theme
  */
-$admin-bg-primary: $neutral-90;
-$admin-bg-secondary: $neutral-70;
-$admin-bg-tertiary: $neutral-80;
+$admin-bg-primary: $neutral-10;
+$admin-bg-secondary: $neutral-20;
+$admin-bg-tertiary: $neutral-30;
 
 
 /**
 Links
  */
-$link-color:                    $brand-60;
-$link-color--active:			$brand-70;
-$link-color--hover:             $brand-90;
-$link-color--visited:           $brand-80;
+$link-color:                    $accent-70;
+$link-color--active:			$accent-80;
+$link-color--hover:             $accent-90;
+$link-color--visited:           $accent-80;
 
-$accent-color:					$accent-60;
-$accent-color--hover:			$accent-70;
-$accent-color--active:			$accent-80;
+
+// @TODO button colours default, alt and dark versions - how to organise the dark versions?
+
+/**
+Buttons
+ */
+$button-bg:					$accent-70;
+$button-bg--hover:			$accent-90;
+$button-bg--active:			$accent-90;
+
+/**
+Buttons--alt
+ */
 
 
 

@@ -14,8 +14,9 @@ nav ul * + * {
 }
 
 .global-nav {
-    background-color: $admin-bg-secondary;
-    color: $neutral-10;
+    background-color: $admin-bg-primary;
+    border-block-start: solid 1px $neutral-30;
+    color: $neutral-90;
     padding-inline: 20px;
 }
 
