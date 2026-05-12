@@ -10,7 +10,9 @@ nav ul * + * {
 }
 
 [data-nav="submenu"] {
-    border: solid 2px $neutral-30;
+    border: solid 2px $neutral-60;
+    border-bottom-left-radius: rem(5);
+    border-bottom-right-radius: rem(5);
     border-top: none;
     margin-block-end: rem(10);
     padding-block-end: rem(10);
@@ -43,13 +45,15 @@ nav ul * + * {
 .global-nav ul button {
     background-color: $neutral-20;
     background-color: transparent;
-    border: solid 2px $neutral-30;
-    border-radius: 0;
+    border: solid 2px $neutral-60;
+    // border-radius: 0;
     color: inherit;
     margin-top: rem(10);
 
         &[aria-expanded="true"] {
-            border-bottom-color: transparent;
+            border-bottom: none;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
         }
 }
 

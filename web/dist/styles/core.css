@@ -2225,7 +2225,9 @@ nav ul * + * {
 }
 
 [data-nav=submenu] {
-  border: solid 2px #c6c6c6;
+  border: solid 2px #6f6f6f;
+  border-bottom-left-radius: 0.3125rem;
+  border-bottom-right-radius: 0.3125rem;
   border-top: none;
   -webkit-margin-after: 0.625rem;
           margin-block-end: 0.625rem;
@@ -2257,13 +2259,14 @@ nav ul * + * {
 .global-nav ul button {
   background-color: #e0e0e0;
   background-color: transparent;
-  border: solid 2px #c6c6c6;
-  border-radius: 0;
+  border: solid 2px #6f6f6f;
   color: inherit;
   margin-top: 0.625rem;
 }
 .global-nav ul button[aria-expanded=true] {
-  border-bottom-color: transparent;
+  border-bottom: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 /* The navigation in the header */
