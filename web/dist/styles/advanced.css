@@ -277,6 +277,7 @@ amplify-table-sort col.js-sorted {
   pointer-events: none;
 }
 .js .global-nav [data-trigger=mobile-nav] {
+  gap: 0.5em;
   -webkit-margin-start: auto;
           margin-inline-start: auto;
 }
