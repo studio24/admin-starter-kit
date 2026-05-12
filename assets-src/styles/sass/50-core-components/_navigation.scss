@@ -10,13 +10,13 @@ nav ul * + * {
 }
 
 [data-nav="submenu"] {
-    background-color: $neutral-20;
-    border-bottom: solid 1px $neutral-30;
+    border: solid 2px $neutral-30;
+    border-top: none;
     margin-block-end: rem(10);
     padding-block-end: rem(10);
 
     ul {
-        padding-left: rem(10);
+        padding-left: rem(15);
         }
     }
 
@@ -42,11 +42,15 @@ nav ul * + * {
 
 .global-nav ul button {
     background-color: $neutral-20;
-    border: none;
-    // border-bottom: solid 1px $neutral-30;
+    background-color: transparent;
+    border: solid 2px $neutral-30;
     border-radius: 0;
     color: inherit;
     margin-top: rem(10);
+
+        &[aria-expanded="true"] {
+            border-bottom-color: transparent;
+        }
 }
 
 /* The navigation in the header */

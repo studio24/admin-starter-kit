@@ -2225,15 +2225,15 @@ nav ul * + * {
 }
 
 [data-nav=submenu] {
-  background-color: #e0e0e0;
-  border-bottom: solid 1px #c6c6c6;
+  border: solid 2px #c6c6c6;
+  border-top: none;
   -webkit-margin-after: 0.625rem;
           margin-block-end: 0.625rem;
   -webkit-padding-after: 0.625rem;
           padding-block-end: 0.625rem;
 }
 [data-nav=submenu] ul {
-  padding-left: 0.625rem;
+  padding-left: 0.9375rem;
 }
 
 .global-nav {
@@ -2256,10 +2256,14 @@ nav ul * + * {
 
 .global-nav ul button {
   background-color: #e0e0e0;
-  border: none;
+  background-color: transparent;
+  border: solid 2px #c6c6c6;
   border-radius: 0;
   color: inherit;
   margin-top: 0.625rem;
+}
+.global-nav ul button[aria-expanded=true] {
+  border-bottom-color: transparent;
 }
 
 /* The navigation in the header */
