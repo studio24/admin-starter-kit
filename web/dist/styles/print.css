@@ -106,7 +106,7 @@ p::first-line {
 }
 
 body {
-  font: 12pt "Lato", "Arial MT Rounded Bold", arial, sans-serif;
+  font: 12pt lato, "Arial MT Rounded Bold", arial, sans-serif;
   line-height: 1.3;
 }
 

@@ -22,26 +22,18 @@
 
 	<link rel="stylesheet" href="dist/styles/print.css" media="print">
 
-	<script src="dist/js/libraries/fontfaceobserver.js"></script>
-
 	<script>
-		let myFont = new FontFaceObserver('Nunito');
-
-		Promise.all([myFont.load()]).then(function () {
-			document.documentElement.className += " fonts-loaded";
-		});
-
 		(function() {
 			let linkEl = document.getElementById('advanced-stylesheet');
 			if (window.matchMedia && window.matchMedia(linkEl.media).matches) {
+				// Update classname to show JS is available
+				(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement);
 				let head = document.querySelector('head');
 				// Add main JS
 				let jsMain = document.createElement('script');
 				jsMain.src = '../dist/js/main.js';
 				jsMain.defer = true;
 				head.appendChild(jsMain);
-				// Update classname to show JS is available
-				(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement);
 			}
 		})();
 	</script>

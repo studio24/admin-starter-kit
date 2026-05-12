@@ -9,7 +9,7 @@
 body {
     @include text-body;
 
-	font-family: $font-family;
+	font-family: $font-sans;
     font-size-adjust: from-font; /* 1 */
 	font-style: $font-style;
 	font-weight: $font-weight;
@@ -72,13 +72,4 @@ h6,
 
     margin-block-end: clamp(2.5rem, calc(2.3rem + 1vw), 3rem);
     text-wrap: balance;
-}
-
-
-/**
-When Font Face Observer has detected that the @font-face files are loaded, then we
-can safely use the web fonts instead of the system fonts.
- */
-.fonts-loaded body {
-	font-family: $font-loaded-family;
 }

@@ -37,13 +37,6 @@ export default [{
 		filename: '[name].js',
 		path: path.resolve(__dirname, 'web/dist/js'),
 	},
-	plugins: [
-		new CopyPlugin({
-			patterns: [
-				{ from: "./../../node_modules/fontfaceobserver/fontfaceobserver.js", to: "./libraries" }
-			]
-		})
-	]
 },
 	{
 		context: path.resolve(__dirname, 'assets-src/js'),
@@ -76,11 +69,4 @@ export default [{
 			filename: '[name].min.js',
 			path: path.resolve(__dirname, 'web/dist/js'),
 		},
-		plugins: [
-			new CopyPlugin({
-				patterns: [
-					{ from: "./../../node_modules/fontfaceobserver/fontfaceobserver.js", to: "./libraries" }
-				]
-			})
-		]
 	}];

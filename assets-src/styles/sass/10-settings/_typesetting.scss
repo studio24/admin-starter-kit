@@ -16,8 +16,7 @@ When Font Face Observer has detected that the @font-face files are loaded, then 
 can safely use the web fonts instead of the system fonts.
  */
 
-$font-family:						"Arial MT Rounded Bold", arial, sans-serif;
-$font-loaded-family:                "Lato", "Arial MT Rounded Bold", arial, sans-serif;
+$font-sans:                         lato, "Arial MT Rounded Bold", arial, sans-serif;
 $font-style:						normal;
 $font-weight:						400;
 

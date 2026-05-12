@@ -5,37 +5,37 @@
 /*------------------------------------*\
     #Fonts
 \*------------------------------------*/
-/* nunito-regular - latin */
+/* lato-regular - subset to Basic Latin, Latin-1 Supplement, Latin Extended-A, General Punctuation, Superscripts and Subscripts, Currency Symbols, Letterlike Symbols, Mathematical Operators, Alphabetic Presentation Forms */
 @font-face {
-  font-display: fallback;
-  font-family: Nunito;
+  font-display: swap;
+  font-family: Lato;
   font-style: normal;
   font-weight: 400;
-  src: local(""), url("../fonts/nunito-v20-latin-regular.woff2") format("woff2"), url("../fonts/nunito-v20-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  src: local(""), url("../fonts/lato-regular-subset.woff2") format("woff2");
 }
-/* nunito-700 - latin */
+/* lato-700 - subset to Basic Latin, Latin-1 Supplement, Latin Extended-A, General Punctuation, Superscripts and Subscripts, Currency Symbols, Letterlike Symbols, Mathematical Operators, Alphabetic Presentation Forms */
 @font-face {
-  font-display: fallback;
-  font-family: Nunito;
+  font-display: swap;
+  font-family: Lato;
   font-style: normal;
   font-weight: 700;
-  src: local(""), url("../fonts/nunito-v20-latin-700.woff2") format("woff2"), url("../fonts/nunito-v20-latin-700.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  src: local(""), url("../fonts/lato-bold-subset.woff2") format("woff2");
 }
-/* nunito-italic - latin */
+/* lato-italic - subset to Basic Latin, Latin-1 Supplement, Latin Extended-A, General Punctuation, Superscripts and Subscripts, Currency Symbols, Letterlike Symbols, Mathematical Operators, Alphabetic Presentation Forms */
 @font-face {
-  font-display: fallback;
-  font-family: Nunito;
+  font-display: swap;
+  font-family: Lato;
   font-style: italic;
   font-weight: 400;
-  src: local(""), url("../fonts/nunito-v20-latin-italic.woff2") format("woff2"), url("../fonts/nunito-v20-latin-italic.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  src: local(""), url("../fonts/lato-italic-subset.woff2") format("woff2");
 }
-/* nunito-700italic - latin */
+/* lato-700italic - subset to Basic Latin, Latin-1 Supplement, Latin Extended-A, General Punctuation, Superscripts and Subscripts, Currency Symbols, Letterlike Symbols, Mathematical Operators, Alphabetic Presentation Forms */
 @font-face {
-  font-display: fallback;
-  font-family: Nunito;
+  font-display: swap;
+  font-family: Lato;
   font-style: italic;
   font-weight: 700;
-  src: local(""), url("../fonts/nunito-v20-latin-700italic.woff2") format("woff2"), url("../fonts/nunito-v20-latin-700italic.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  src: local(""), url("../fonts/lato-bolditalic-subset.woff2") format("woff2");
 }
 /*------------------------------------*\
     #Base
@@ -388,7 +388,7 @@ full height columns to pages using `div.admin-scaffold`
 \*------------------------------------*/
 body {
   font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
-  font-family: "Arial MT Rounded Bold", arial, sans-serif;
+  font-family: lato, "Arial MT Rounded Bold", arial, sans-serif;
   font-size-adjust: from-font; /* 1 */
   font-style: normal;
   font-weight: 400;
@@ -458,14 +458,6 @@ h6,
   -webkit-margin-after: clamp(2.5rem, 2.3rem + 1vw, 3rem);
           margin-block-end: clamp(2.5rem, 2.3rem + 1vw, 3rem);
   text-wrap: balance;
-}
-
-/**
-When Font Face Observer has detected that the @font-face files are loaded, then we
-can safely use the web fonts instead of the system fonts.
- */
-.fonts-loaded body {
-  font-family: "Lato", "Arial MT Rounded Bold", arial, sans-serif;
 }
 
 /*------------------------------------*\
