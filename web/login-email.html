@@ -60,12 +60,12 @@
 				<label for="email-input">Email</label>
 				<input type="email" id="email-input" name="email" autocomplete="email" autocapitalize="none" autocorrect="off" spellcheck="false" inputmode="email">
 			</div>
-			<div class="field" data-field="amplify-password">
+			<div class="field">
 				<label for="password-input">Password</label>
-				<div class="input-group">
+				<amplify-pw-toggle class="input-group">
 					<input type="password" id="password-input" name="password" autocomplete="current-password" autocapitalize="none" autocorrect="off" spellcheck="false">
 					<button type="button" aria-controls="password-input" hidden>Show</button>
-				</div>
+				</amplify-pw-toggle>
 			</div>
 			<p><a href="forgot-my-password.html">Forgot my password</a></p>
 			<div class="field">
@@ -77,72 +77,12 @@
 	</main>
 </div>
 </body>
-
 <script>
-	(function () {
-
-	// insertAfter helper function
-	function insertAfter(el, referenceNode) {
-		referenceNode.parentNode.insertBefore(el, referenceNode.nextSibling);
+	if (document.documentElement.classList.contains('js')) {
+		const passwordToggle = document.createElement('script');
+		passwordToggle.src = '../../dist/js/password-toggle.js';
+		document.querySelector('body').appendChild(passwordToggle);
 	}
-
-	let passwordField = document.querySelector('[data-field="amplify-password"]');
-	if (passwordField) {
-		let passwordInput = passwordField.querySelector('input[type="password"]');
-		let showHideBtn = passwordField.querySelector('button[aria-controls="password-input"]');
-
-		showHideBtn.removeAttribute('hidden');
-
-		// Create and append a status region for updating screen readers.
-		// This is injected between the input and button for a sensible reading order when
-		// moving through the page content linearly:
-		// [password input] -> [your password is visible/hidden] -> [show/hide password]
-		const screenReaderStatusMessage = document.createElement('div');
-		screenReaderStatusMessage.setAttribute('class', 'visuallyhidden');
-		screenReaderStatusMessage.setAttribute('aria-live', 'polite');
-
-		insertAfter(screenReaderStatusMessage, passwordInput);
-
-		function setType(type) {
-			if (passwordInput.type === type) return;
-
-			passwordInput.setAttribute('type', type);
-
-			const isHidden = type === 'password';
-			showHideBtn.innerText = isHidden ? 'Show' : 'Hide';
-			screenReaderStatusMessage.innerText = isHidden
-				? 'Your password is hidden'
-				: 'Your password is visible';
-		}
-
-		function hide() {
-			setType('password');
-		}
-
-		function show() {
-			setType('text');
-		}
-
-		function toggle(event) {
-			event.preventDefault();
-			passwordInput.type === 'password' ? show() : hide();
-		}
-
-		showHideBtn.addEventListener('click', toggle);
-
-		if (passwordInput.form) {
-			passwordInput.form.addEventListener('submit', hide);
-		}
-
-		window.addEventListener('pageshow', (event) => {
-			if (event.persisted && passwordInput.type !== 'password') {
-				hide();
-			}
-		})
-
-		hide(); // Default to hidden
-	}
-	})();
 </script>
 
 </html>
