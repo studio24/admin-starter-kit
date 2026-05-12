@@ -2225,8 +2225,15 @@ nav ul * + * {
 }
 
 [data-nav=submenu] {
-  -webkit-padding-start: 1.25rem;
-          padding-inline-start: 1.25rem;
+  background-color: #e0e0e0;
+  border-bottom: solid 1px #c6c6c6;
+  -webkit-margin-after: 0.625rem;
+          margin-block-end: 0.625rem;
+  -webkit-padding-after: 0.625rem;
+          padding-block-end: 0.625rem;
+}
+[data-nav=submenu] ul {
+  padding-left: 0.625rem;
 }
 
 .global-nav {
@@ -2245,6 +2252,14 @@ nav ul * + * {
 }
 .global-nav a:visited, .global-nav a:hover, .global-nav a:active {
   color: inherit;
+}
+
+.global-nav ul button {
+  background-color: #e0e0e0;
+  border: none;
+  border-radius: 0;
+  color: inherit;
+  margin-top: 0.625rem;
 }
 
 /* The navigation in the header */

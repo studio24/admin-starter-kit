@@ -10,8 +10,15 @@ nav ul * + * {
 }
 
 [data-nav="submenu"] {
-    padding-inline-start: rem(20);
-}
+    background-color: $neutral-20;
+    border-bottom: solid 1px $neutral-30;
+    margin-block-end: rem(10);
+    padding-block-end: rem(10);
+
+    ul {
+        padding-left: rem(10);
+        }
+    }
 
 .global-nav {
     background-color: $admin-bg-primary;
@@ -31,6 +38,15 @@ nav ul * + * {
     &:active {
         color: inherit;
     }
+}
+
+.global-nav ul button {
+    background-color: $neutral-20;
+    border: none;
+    // border-bottom: solid 1px $neutral-30;
+    border-radius: 0;
+    color: inherit;
+    margin-top: rem(10);
 }
 
 /* The navigation in the header */
