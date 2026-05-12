@@ -2257,7 +2257,6 @@ nav ul * + * {
 }
 
 .global-nav ul button {
-  background-color: #e0e0e0;
   background-color: transparent;
   border: solid 2px #6f6f6f;
   color: inherit;
