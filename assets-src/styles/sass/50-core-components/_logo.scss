@@ -6,7 +6,6 @@
 
 .logo {
     margin-block-end: 20px;
-    margin-inline: auto;
     position: relative;
 
     @include mq($bp-tab-landscape) {
@@ -17,11 +16,9 @@
 .logo__inner {
     align-items: center;
     display: flex;
-    justify-content: center;
 }
 
 .logo__inner > * {
-    background-color: transparent;
     inline-size: auto;
     max-block-size: 50px;
     padding: 5px;
