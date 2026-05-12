@@ -2,7 +2,6 @@
     #Typography
 
     1. Makes elements like <code> a more in-proportion size based on our base font
-    2. Starting text-wrap style is optional and fine to override/remove as required by a design
 \*------------------------------------*/
 @use '../10-settings' as *;
 @use '../20-tools' as *;
@@ -29,14 +28,6 @@ h1, h2, h3, h4, h5, h6 {
     margin-block-end: clamp(0.5rem, calc(0.3rem + 1vw), 1rem);
 }
 
-h1, h2, h3, h4 {
-    text-wrap: balance; /* 2 */
-}
-
-h1, h2, h3 {
-    hyphens: auto;
-}
-
 h2, h3, h4, h5, h6 {
     margin-block-start: rem(32);
 }
@@ -44,22 +35,16 @@ h2, h3, h4, h5, h6 {
 h1,
 .text-40 {
 	@include text-40;
-
-    max-inline-size: 20ch;
 }
 
 h2,
 .text-36 {
     @include text-36;
-
-    max-inline-size: 35ch;
 }
 
 h3,
 .text-32 {
     @include text-32;
-
-    max-inline-size: 35ch;
 }
 
 h4,
