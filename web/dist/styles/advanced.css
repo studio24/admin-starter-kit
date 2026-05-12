@@ -273,9 +273,6 @@ amplify-table-sort col.js-sorted {
 
     N.B. aria-expanded attribute is managed by JS
 \*------------------------------------*/
-.js .global-nav {
-  /* Prevent offscreen-submenus */
-}
 .js .global-nav [data-trigger] > * {
   pointer-events: none;
 }
@@ -312,6 +309,9 @@ amplify-table-sort col.js-sorted {
 .js .global-nav [data-nav=submenu] {
   -webkit-padding-start: 0;
           padding-inline-start: 0;
+}
+.js .global-nav {
+  /* Prevent offscreen-submenus */
 }
 .js .global-nav [data-nav=submenu].js-sub-menu-right {
   inset-inline: auto 0;
@@ -538,12 +538,6 @@ amplify-table-sort col.js-sorted {
   display: block;
   padding: 0.5em 1em;
   text-decoration: none;
-  /**
-   * Active tab styling
-   */
-  /**
-   * Tabs on hover
-   */
 }
 @media (min-width: 30em) {
   [role=tab] {
@@ -554,6 +548,11 @@ amplify-table-sort col.js-sorted {
     margin-bottom: -1px;
   }
 }
+[role=tab] {
+  /**
+   * Active tab styling
+   */
+}
 [role=tab][aria-selected=true] {
   background-color: rgb(211.15, 211.15, 211.15);
 }
@@ -563,6 +562,11 @@ amplify-table-sort col.js-sorted {
     border: 1px solid rgb(211.15, 211.15, 211.15);
     border-bottom-color: #ffffff;
   }
+}
+[role=tab] {
+  /**
+   * Tabs on hover
+   */
 }
 [role=tab]:hover:not([aria-selected=true]) {
   background-color: #f7f7f7;
@@ -699,9 +703,6 @@ amplify-table-sort col.js-sorted {
   display: block;
   margin-bottom: 0;
   padding: 0.625em 0.9375em;
-  /**
-  Unset focus styles (apart from transparent outline) where the browser wouldn't set a visible focus
-   */
 }
 .component--tabs a[role=tab]:hover {
   background-color: #c6c6c6;
@@ -717,6 +718,11 @@ amplify-table-sort col.js-sorted {
 .component--tabs a[role=tab]:focus {
   box-shadow: inset 0 0 0 4px #000;
   outline-offset: -4px;
+}
+.component--tabs a[role=tab] {
+  /**
+  Unset focus styles (apart from transparent outline) where the browser wouldn't set a visible focus
+   */
 }
 .component--tabs a[role=tab]:focus:not(:focus-visible) {
   box-shadow: none;

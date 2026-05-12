@@ -621,11 +621,11 @@ sup {
   font-family: monaco, "Lucida Console", "Courier New", monospace;
   -webkit-hyphens: none;
           hyphens: none;
+  overflow-wrap: normal;
   padding: 0.125em 0.25em;
   tab-size: 4;
   word-break: normal;
   word-spacing: normal;
-  word-wrap: normal;
 }
 
 /* This is quite a new property, so we want to make sure code styles are not huge or tiny */
@@ -1306,15 +1306,6 @@ main:focus,
   The default styles for fieldset and legend are weird, so we effectively hide the fieldset
   If you want a border etc. wrap the fieldset in a div with the class `.fieldset-wrap`
   */
-  /* Set vertical spacing between direct children of a form or fieldset */
-  /* Double the vertical spacing around fieldset/.fieldset-wrap */
-  /* A wrapper for an input and its label (but not checkboxes/radios, which have their own classes) */
-  /* Make input height match Amplify button height (defaults to equivalent of 44px for WCAG AAA */
-  /* Limit max width of file input to prevent unwanted horizontal scrolling */
-  /* Disabled inputs - try to avoid using these to avoid accessibility issues */
-  /* A wrapper to allow fields to sit side-by-side horizontally, if desired */
-  /* Fixed input widths */
-  /* Error styles */
 }
 .amplify-form fieldset {
   border: 0;
@@ -1326,10 +1317,16 @@ main:focus,
   border: solid 1px;
   padding: 0.5rem;
 }
+.amplify-form {
+  /* Set vertical spacing between direct children of a form or fieldset */
+}
 .amplify-form > * + *,
 .amplify-form fieldset > * + * {
   -webkit-margin-before: 1.75rem;
           margin-block-start: 1.75rem;
+}
+.amplify-form {
+  /* Double the vertical spacing around fieldset/.fieldset-wrap */
 }
 .amplify-form fieldset:not(:first-child),
 .amplify-form fieldset + *,
@@ -1342,6 +1339,9 @@ main:focus,
   font-size: clamp(1.125rem, 1.025rem + 0.5vw, 1.375rem);
   line-height: 1.5;
   font-weight: 600;
+}
+.amplify-form {
+  /* A wrapper for an input and its label (but not checkboxes/radios, which have their own classes) */
 }
 .amplify-form .field {
   max-inline-size: 41.25rem;
@@ -1385,8 +1385,14 @@ main:focus,
   inline-size: 100%;
   padding: 0.3125rem;
 }
+.amplify-form {
+  /* Make input height match Amplify button height (defaults to equivalent of 44px for WCAG AAA */
+}
 .amplify-form :where(input:not([type=checkbox], [type=radio])) {
   min-block-size: 2.75rem;
+}
+.amplify-form {
+  /* Limit max width of file input to prevent unwanted horizontal scrolling */
 }
 .amplify-form [type=file] {
   border-color: transparent;
@@ -1398,6 +1404,9 @@ main:focus,
 .amplify-form textarea:not([rows]) {
   min-height: 10em;
 }
+.amplify-form {
+  /* Disabled inputs - try to avoid using these to avoid accessibility issues */
+}
 .amplify-form input[disabled] {
   background-color: #e0e0e0;
 }
@@ -1405,12 +1414,18 @@ main:focus,
 .amplify-form label input[disabled] + * {
   cursor: not-allowed;
 }
+.amplify-form {
+  /* A wrapper to allow fields to sit side-by-side horizontally, if desired */
+}
 .amplify-form .input-group {
   align-items: center;
   display: flex;
   gap: 1.875rem;
   -webkit-margin-before: 0;
           margin-block-start: 0;
+}
+.amplify-form {
+  /* Fixed input widths */
 }
 .amplify-form .input-width-30 {
   max-inline-size: 59ex;
@@ -1432,6 +1447,9 @@ main:focus,
 }
 .amplify-form .input-width-2 {
   max-inline-size: 5.4ex;
+}
+.amplify-form {
+  /* Error styles */
 }
 .amplify-form [data-component=error-summary] li a {
   color: #a4141b;
@@ -1507,26 +1525,19 @@ main:focus,
 /* stylelint-disable no-descending-specificity */
 .amplify-form {
   /* Select any <div> which contains a checkbox or radio input */
-  /* Checkbox/radio input with hover - add `.checkbox-item`/`.radio-item` class to parent <div> */
-  /* Checkbox/radio input with focus and hover - add `.checkbox-item`/`.radio-item` class to parent <div> */
 }
 .amplify-form div:has(> :where([type=checkbox], [type=radio])) {
   display: flex;
   flex-wrap: wrap;
   position: relative;
   /* Reduce vertical space between adjacent checkbox/radio fields */
-  /* Use pointer cursor to increase visual affordance */
-  /* Disabled inputs - try to avoid using these to avoid accessibility issues */
-  /* The checkbox "tick" */
-  /* The radio "dot" */
-  /* Checkbox/radio input when not checked */
-  /* Checkbox/radio input when checked */
-  /* The hint text, if used */
-  /* Checkbox/radio input with focus */
 }
 .amplify-form div:has(> :where([type=checkbox], [type=radio])) + div:has(> :where([type=checkbox], [type=radio])) {
   -webkit-margin-before: 0.5rem;
           margin-block-start: 0.5rem;
+}
+.amplify-form div:has(> :where([type=checkbox], [type=radio])) {
+  /* Use pointer cursor to increase visual affordance */
 }
 .amplify-form div:has(> :where([type=checkbox], [type=radio])) input:not([disabled]),
 .amplify-form div:has(> :where([type=checkbox], [type=radio])) input:not([disabled]) + label {
@@ -1539,6 +1550,9 @@ main:focus,
   -webkit-margin-start: -10px;
           margin-inline-start: -10px;
   opacity: 0;
+}
+.amplify-form div:has(> :where([type=checkbox], [type=radio])) {
+  /* Disabled inputs - try to avoid using these to avoid accessibility issues */
 }
 .amplify-form div:has(> :where([type=checkbox], [type=radio])) input[disabled] + label {
   cursor: not-allowed;
@@ -1556,11 +1570,13 @@ main:focus,
   -webkit-padding-start: 1px;
           padding-inline-start: 1px;
   touch-action: manipulation;
-  /* Shared styles for the checkbox square/radio circle */
 }
 .amplify-form div:has(> :where([type=checkbox], [type=radio])) label::before, .amplify-form div:has(> :where([type=checkbox], [type=radio])) label::after {
   content: "";
   position: absolute;
+}
+.amplify-form div:has(> :where([type=checkbox], [type=radio])) label {
+  /* Shared styles for the checkbox square/radio circle */
 }
 .amplify-form div:has(> :where([type=checkbox], [type=radio])) label::before {
   block-size: 24px;
@@ -1572,6 +1588,9 @@ main:focus,
 .amplify-form div:has(> :where([type=checkbox], [type=radio])) [type=checkbox] + label::before,
 .amplify-form div:has(> :where([type=checkbox], [type=radio])) [type=checkbox] + label::after {
   background: transparent;
+}
+.amplify-form div:has(> :where([type=checkbox], [type=radio])) {
+  /* The checkbox "tick" */
 }
 .amplify-form div:has(> :where([type=checkbox], [type=radio])) [type=checkbox] + label::after {
   block-size: 6.5px;
@@ -1587,6 +1606,9 @@ main:focus,
 .amplify-form div:has(> :where([type=checkbox], [type=radio])) [type=radio] + label::after {
   border-radius: 50%;
 }
+.amplify-form div:has(> :where([type=checkbox], [type=radio])) {
+  /* The radio "dot" */
+}
 .amplify-form div:has(> :where([type=checkbox], [type=radio])) [type=radio] + label::after {
   background-color: currentcolor;
   block-size: 0;
@@ -1595,13 +1617,22 @@ main:focus,
   inset-block-start: 17px;
   inset-inline-start: 7px;
 }
+.amplify-form div:has(> :where([type=checkbox], [type=radio])) {
+  /* Checkbox/radio input when not checked */
+}
 .amplify-form div:has(> :where([type=checkbox], [type=radio])) [type=checkbox] + label::after,
 .amplify-form div:has(> :where([type=checkbox], [type=radio])) [type=radio] + label::after {
   opacity: 0;
 }
+.amplify-form div:has(> :where([type=checkbox], [type=radio])) {
+  /* Checkbox/radio input when checked */
+}
 .amplify-form div:has(> :where([type=checkbox], [type=radio])) [type=checkbox]:checked + label::after,
 .amplify-form div:has(> :where([type=checkbox], [type=radio])) [type=radio]:checked + label::after {
   opacity: 1;
+}
+.amplify-form div:has(> :where([type=checkbox], [type=radio])) {
+  /* The hint text, if used */
 }
 .amplify-form div:has(> :where([type=checkbox], [type=radio])) .field-hint {
   inline-size: 100%;
@@ -1609,13 +1640,22 @@ main:focus,
   max-inline-size: none;
   padding-inline: 36px 15px;
 }
+.amplify-form div:has(> :where([type=checkbox], [type=radio])) {
+  /* Checkbox/radio input with focus */
+}
 .amplify-form div:has(> :where([type=checkbox], [type=radio])) input:focus + label::before {
   box-shadow: 0 0 0 4px #000;
   outline: 2px solid #ffdc00; /* 1 */
   outline-offset: 0; /* 1 */
 }
+.amplify-form {
+  /* Checkbox/radio input with hover - add `.checkbox-item`/`.radio-item` class to parent <div> */
+}
 .amplify-form :where(.checkbox-item, .radio-item):hover input:not([disabled]) + label::before {
   box-shadow: 0 0 0 4px #8d8d8d;
+}
+.amplify-form {
+  /* Checkbox/radio input with focus and hover - add `.checkbox-item`/`.radio-item` class to parent <div> */
 }
 .amplify-form :where(.radio-item, .checkbox-item):hover input:focus + label::before {
   box-shadow: 0 0 0 4px #000;
@@ -1638,10 +1678,6 @@ main:focus,
     Make sure to apply the `.amplify-form` class directly to the <form> to
     pick up these styles and try to avoid conflicts with third party form styles
 \*------------------------------------*/
-.amplify-form {
-  /* Make <select> height match Amplify button height (defaults to equivalent of 44px for WCAG AAA) */
-  /* Optional: select with custom icon matching the SVG used for accessible autocomplete */
-}
 .amplify-form select {
   background-color: inherit;
   border: 2px solid #8d8d8d;
@@ -1649,8 +1685,14 @@ main:focus,
   inline-size: 100%;
   padding: 0.3125rem;
 }
+.amplify-form {
+  /* Make <select> height match Amplify button height (defaults to equivalent of 44px for WCAG AAA) */
+}
 .amplify-form select:not([multiple]) {
   min-block-size: 2.75rem;
+}
+.amplify-form {
+  /* Optional: select with custom icon matching the SVG used for accessible autocomplete */
 }
 @supports ((-webkit-appearance: none) or (appearance: none)) {
   .amplify-form select:not([multiple]) {
@@ -1705,8 +1747,6 @@ main:focus,
 .amplify-form .segmented-group.l-switcher {
   -webkit-margin-before: 0;
           margin-block-start: 0;
-  /* Input with hover */
-  /* Input with focus - label carries focus styles */
 }
 .amplify-form .segmented-group.l-switcher > * {
   display: block;
@@ -1720,7 +1760,6 @@ main:focus,
   margin: 0.125rem;
   max-inline-size: none;
   padding: 0;
-  /* The "tick" - even if it's a radio */
 }
 .amplify-form .segmented-group.l-switcher label::before, .amplify-form .segmented-group.l-switcher label::after {
   content: "";
@@ -1732,6 +1771,9 @@ main:focus,
   border-radius: 0;
   inset-block-start: 0.625rem;
   inset-inline: auto 0.625rem;
+}
+.amplify-form .segmented-group.l-switcher label {
+  /* The "tick" - even if it's a radio */
 }
 .amplify-form .segmented-group.l-switcher label::after {
   background: transparent;
@@ -1760,14 +1802,16 @@ main:focus,
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  display: block;
-  padding: 0.625rem;
-  -webkit-padding-end: 2.75rem;
-          padding-inline-end: 2.75rem;
 }
 .amplify-form .segmented-group.l-switcher .segmented-label > * + * {
   -webkit-margin-before: 0.5em;
           margin-block-start: 0.5em;
+}
+.amplify-form .segmented-group.l-switcher .segmented-label {
+  display: block;
+  padding: 0.625rem;
+  -webkit-padding-end: 2.75rem;
+          padding-inline-end: 2.75rem;
 }
 .amplify-form .segmented-group.l-switcher .segmented-label span {
   display: block;
@@ -1778,8 +1822,14 @@ main:focus,
 .amplify-form .segmented-group.l-switcher .segmented-label__copy {
   font-weight: normal;
 }
+.amplify-form .segmented-group.l-switcher {
+  /* Input with hover */
+}
 .amplify-form .segmented-group.l-switcher > * > *:hover label {
   background-color: #c6c6c6;
+}
+.amplify-form .segmented-group.l-switcher {
+  /* Input with focus - label carries focus styles */
 }
 .amplify-form .segmented-group.l-switcher input:focus + label {
   border-color: #000;
