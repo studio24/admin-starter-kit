@@ -17,6 +17,15 @@
         justify-content: space-between;
     }
 
+    [data-nav="submenu"] {
+        border: solid 2px $neutral-60;
+        border-end-end-radius: rem(5);
+        border-end-start-radius: rem(5);
+        border-top: none;
+        margin-block-end: rem(10);
+        padding-block-end: rem(10);
+    }
+
     [data-trigger="sub-nav"][aria-expanded="true"] svg {
         transform: scaleY(-1);
     }

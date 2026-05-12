@@ -2224,20 +2224,6 @@ nav ul * + * {
   margin: 0;
 }
 
-[data-nav=submenu] {
-  border: solid 2px #6f6f6f;
-  border-bottom-left-radius: 0.3125rem;
-  border-bottom-right-radius: 0.3125rem;
-  border-top: none;
-  -webkit-margin-after: 0.625rem;
-          margin-block-end: 0.625rem;
-  -webkit-padding-after: 0.625rem;
-          padding-block-end: 0.625rem;
-}
-[data-nav=submenu] ul {
-  padding-left: 0.9375rem;
-}
-
 .global-nav {
   background-color: #f4f4f4;
   -webkit-border-before: solid 1px #c6c6c6;
@@ -2278,6 +2264,11 @@ nav ul * + * {
   .secondary-nav {
     justify-content: flex-end;
   }
+}
+
+[data-nav=submenu] ul {
+  -webkit-padding-start: 0.9375rem;
+          padding-inline-start: 0.9375rem;
 }
 
 /*------------------------------------*\

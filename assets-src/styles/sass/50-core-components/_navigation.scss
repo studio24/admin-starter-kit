@@ -9,19 +9,6 @@ nav ul * + * {
     margin: 0;
 }
 
-[data-nav="submenu"] {
-    border: solid 2px $neutral-60;
-    border-bottom-left-radius: rem(5);
-    border-bottom-right-radius: rem(5);
-    border-top: none;
-    margin-block-end: rem(10);
-    padding-block-end: rem(10);
-
-    ul {
-        padding-left: rem(15);
-        }
-    }
-
 .global-nav {
     background-color: $admin-bg-primary;
     border-block-start: solid 1px $neutral-30;
@@ -66,3 +53,7 @@ nav ul * + * {
         justify-content: flex-end;
     }
 }
+
+ [data-nav="submenu"] ul {
+     padding-inline-start: rem(15);
+ }
