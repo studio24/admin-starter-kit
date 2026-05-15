@@ -1,0 +1,18 @@
+/*------------------------------------*\
+    #Login
+    (also used for password reset screen)
+\*------------------------------------*/
+@use '../10-settings' as *;
+@use '../20-tools' as *;
+
+.login {
+    --center-max-width: #{rem(500)};
+
+    .logo {
+        margin-block: rem(40);
+    }
+
+    .logo__inner {
+        justify-content: center;
+    }
+}

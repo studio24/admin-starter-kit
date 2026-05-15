@@ -2363,14 +2363,36 @@ Separator chevron - see https://codepen.io/jonneal/pen/kptBs
 }
 
 .component + .component {
-  -webkit-margin-before: 1.5rem;
-          margin-block-start: 1.5rem;
+  -webkit-margin-before: 20rem;
+          margin-block-start: 20rem;
 }
 @media screen and (min-width: 48em) {
   .component + .component {
     -webkit-margin-before: 3rem;
             margin-block-start: 3rem;
   }
+}
+
+/*------------------------------------*\
+    #Amplify CSS reset
+
+    Inspiration:
+    - https://piccalil.li/blog/a-more-modern-css-reset/
+    - https://www.joshwcomeau.com/css/custom-css-reset/
+    - https://github.com/jensimmons/cssremedy/blob/master/css/remedy.css
+\*------------------------------------*/
+/*------------------------------------*\
+    #Login
+    (also used for password reset screen)
+\*------------------------------------*/
+.login {
+  --center-max-width: 31.25rem;
+}
+.login .logo {
+  margin-block: 2.5rem;
+}
+.login .logo__inner {
+  justify-content: center;
 }
 
 /*------------------------------------*\

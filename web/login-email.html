@@ -45,7 +45,7 @@
 <div class="not-footer">
 	<main id="amplify-main">
 		<details>
-			<summary>Notes on this example</summary>
+			<summary>About this example</summary>
 			<ul>
 				<li>This login form requires an email address. The input markup is tailored accordingly.</li>
 				<li>There is no need for a password confirmation field, thanks to the show/hide functionality</li>
@@ -53,27 +53,36 @@
 				<li>The <code>novalidate</code> attribute on the form turns off HTML5 in-browser validation, which is not very accessible.</li>
 			</ul>
 		</details>
-		<h1>Login</h1>
-		<p>All fields are required.</p>
-		<form class="amplify-form" novalidate>
-			<div class="field">
-				<label for="email-input">Email</label>
-				<input type="email" id="email-input" name="email" autocomplete="email" autocapitalize="none" autocorrect="off" spellcheck="false" inputmode="email">
+		<div class="l-center login">
+			<div id="site-aria-alert" role="alert"></div>
+			<div id="site-aria-status" role="status"></div>
+			<div class="logo">
+				<div class="logo__inner">
+					<img src="../dist/svg/logoipsum-logo-6.svg" role="img" alt="LogoIpsum">
+				</div>
 			</div>
-			<div class="field">
-				<label for="password-input">Password</label>
-				<amplify-pw-toggle class="input-group">
-					<input type="password" id="password-input" name="password" autocomplete="current-password" autocapitalize="none" autocorrect="off" spellcheck="false">
-					<button type="button" aria-controls="password-input" hidden>Show</button>
-				</amplify-pw-toggle>
-			</div>
-			<p><a href="forgot-my-password.html">Forgot my password</a></p>
-			<div class="field">
-				<button type="submit">Login</button>
-			</div>
-		</form>
-		<h2>If you don’t have an account</h2>
-		<p><a href="javascript:void(0)">Sign up for an account</a></p>
+			<h1>Login</h1>
+			<p>All fields are required.</p>
+			<form class="amplify-form" novalidate>
+				<div class="field">
+					<label for="email-input">Email</label>
+					<input type="email" id="email-input" name="email" autocomplete="email" autocapitalize="none" autocorrect="off" spellcheck="false" inputmode="email">
+				</div>
+				<div class="field">
+					<label for="password-input">Password</label>
+					<amplify-pw-toggle class="input-group">
+						<input type="password" id="password-input" name="password" autocomplete="current-password" autocapitalize="none" autocorrect="off" spellcheck="false">
+						<button type="button" aria-controls="password-input" hidden>Show</button>
+					</amplify-pw-toggle>
+				</div>
+				<p><a href="forgot-my-password.html">Forgot my password</a></p>
+				<div class="field">
+					<button type="submit">Login</button>
+				</div>
+			</form>
+			<h2>If you don’t have an account</h2>
+			<p><a href="javascript:void(0)">Sign up for an account</a></p>
+		</div>
 	</main>
 </div>
 </body>
