@@ -19,7 +19,7 @@
 
 
 .component + .component {
-	margin-block-start: #{rem(320)};
+	margin-block-start: rem(24);
 
 	@include mq($bp-tab-portrait) {
 		margin-block-start: rem(48);

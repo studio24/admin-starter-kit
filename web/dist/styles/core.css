@@ -2363,8 +2363,8 @@ Separator chevron - see https://codepen.io/jonneal/pen/kptBs
 }
 
 .component + .component {
-  -webkit-margin-before: 20rem;
-          margin-block-start: 20rem;
+  -webkit-margin-before: 1.5rem;
+          margin-block-start: 1.5rem;
 }
 @media screen and (min-width: 48em) {
   .component + .component {
