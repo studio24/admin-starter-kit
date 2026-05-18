@@ -27,6 +27,12 @@ nav ul * + * {
     &:active {
         color: inherit;
     }
+
+    &:hover {
+        background-color: $neutral-20;
+        border-radius: rem(5);
+    }
+
 }
 
 .global-nav ul button {
@@ -40,6 +46,18 @@ nav ul * + * {
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
         }
+
+        &:hover {
+        background-color: $neutral-20;
+        }
+}
+
+.global-nav li:has(button) + li {
+    margin-top: rem(10);
+}
+
+button[data-trigger="mobile-nav"] + ul { 
+    margin-top: rem(10);
 }
 
 /* The navigation in the header */
@@ -55,5 +73,5 @@ nav ul * + * {
 }
 
  [data-nav="submenu"] ul {
-     padding-inline-start: rem(15);
+     padding: 0 rem(15);
  }

@@ -2240,6 +2240,10 @@ nav ul * + * {
 .global-nav a:visited, .global-nav a:hover, .global-nav a:active {
   color: inherit;
 }
+.global-nav a:hover {
+  background-color: #e0e0e0;
+  border-radius: 0.3125rem;
+}
 
 .global-nav ul button {
   background-color: transparent;
@@ -2251,6 +2255,17 @@ nav ul * + * {
   border-bottom: none;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
+}
+.global-nav ul button:hover {
+  background-color: #e0e0e0;
+}
+
+.global-nav li:has(button) + li {
+  margin-top: 0.625rem;
+}
+
+button[data-trigger=mobile-nav] + ul {
+  margin-top: 0.625rem;
 }
 
 /* The navigation in the header */
@@ -2266,8 +2281,7 @@ nav ul * + * {
 }
 
 [data-nav=submenu] ul {
-  -webkit-padding-start: 0.9375rem;
-          padding-inline-start: 0.9375rem;
+  padding: 0 0.9375rem;
 }
 
 /*------------------------------------*\
