@@ -16,7 +16,7 @@
 @use '../20-tools' as *;
 
 .global-footer {
-    background-color: $neutral-10;
+    background-color: $white;
     border-top: solid 1px $neutral-30;
     color: $off-black;
 	grid-row: 2 / 3; /* 1 */
@@ -45,6 +45,6 @@
 }
 
 .global-footer__credits {
-    background-color: $neutral-10;
+    background-color: $white;
     padding: 10px 20px;
 }

@@ -2147,7 +2147,7 @@ media query.
     #Global header
 \*------------------------------------*/
 .global-header {
-  background-color: #f4f4f4;
+  background-color: #fff;
   color: #262626;
   line-height: normal;
   padding-block: 20px;
@@ -2815,7 +2815,7 @@ Separator chevron - see https://codepen.io/jonneal/pen/kptBs
 
 \*------------------------------------*/
 .global-footer {
-  background-color: #f4f4f4;
+  background-color: #fff;
   border-top: solid 1px #c6c6c6;
   color: #262626;
   grid-row: 2/3; /* 1 */
@@ -2840,7 +2840,7 @@ Separator chevron - see https://codepen.io/jonneal/pen/kptBs
 }
 
 .global-footer__credits {
-  background-color: #f4f4f4;
+  background-color: #fff;
   padding: 10px 20px;
 }
 
