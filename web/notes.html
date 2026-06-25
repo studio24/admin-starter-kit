@@ -52,6 +52,7 @@
 				<li>Having them in initial page markup is the most robust method for making sure screen reader users are aware when new content is added to the page. Because these ARIA live regions are always on the page and empty until needed, screen readers are primed to monitor them.</li>
 				<li>Only error messages should be added to <code>div id="site-aria-alert"</code>, which has a <code>role</code> of <code>alert</code>. The user's attention should be brought to it immediately. Alerts, by definition, are disruptive; lots of alerts at once or unnecessary alerts will create a bad user experience.</li>
 				<li>If the content of the note is advisory information not important enough to justify an alert, add it to <code>div id="site-aria-status"</code>, which has a <code>role</code> of <code>status</code>.</li>
+				<li><strong>Don't forget to remove these notes from your production code.</strong></li>
 			</ul>
 		</details>
 		<div id="site-aria-alert" role="alert">
