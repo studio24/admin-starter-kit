@@ -1104,14 +1104,12 @@ blockquote footer {
     #Tables
 \*------------------------------------*/
 table {
-  background-color: #fff;
   border: 1px solid #c6c6c6;
   border-collapse: collapse;
   inline-size: 100%;
 }
 
 caption {
-  background-color: #fff;
   border: 1px solid #c6c6c6;
   -webkit-border-after: 0;
           border-block-end: 0;
