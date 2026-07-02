@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Multiselect table</title>
+
+    <link rel="stylesheet" href="../dist/styles/core.css" media="screen">
+
+    <!--
+    Print (Edge doesn't apply to print otherwise)
+    Edge, Chrome 39+, Opera 26+, Safari 9+, iOS 9+, Android ~5+, Android UCBrowser ~11.8+
+    FF 47+
+    -->
+    <link rel="stylesheet" id="advanced-stylesheet" href="../dist/styles/advanced.min.css" media="
+	only print,
+	only all and (pointer: fine), only all and (pointer: coarse), only all and (pointer: none),
+	only all and (min--moz-device-pixel-ratio:0) and (display-mode:browser), (min--moz-device-pixel-ratio:0) and (display-mode:fullscreen)
+	">
+
+    <link rel="stylesheet" href="../dist/styles/print.css" media="print">
+
+    <script>
+        (function() {
+            let linkEl = document.getElementById('advanced-stylesheet');
+            if (window.matchMedia && window.matchMedia(linkEl.media).matches) {
+                // Update classname to show JS is available
+                (function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement);
+                let head = document.querySelector('head');
+                // Add main JS
+                let jsMain = document.createElement('script');
+                jsMain.src = '../dist/js/main.js';
+                jsMain.defer = true;
+                head.appendChild(jsMain);
+            }
+        })();
+    </script>
+
+
+</head>
+
+<body>
+<div class="not-footer">
+    <header class="global-header">
+        <a href="#amplify-main" class="skip-link" id="the-top">Skip to content</a>
+        <div class="admin-scaffold">
+            <div class="logo">
+                <div class="logo__inner">
+                    <img src="dist/svg/logoipsum-logo-6.svg" role="img" alt="LogoIpsum">
+                </div>
+            </div>
+            <nav class="l-cluster secondary-nav" aria-label="Secondary">
+                <ul class="l-cluster">
+                    <li><a href="javascript:void(0);">Logged in: [email/username]</a></li>
+                    <li><a href="javascript:void(0);" class="button">Log out</a></li>
+                </ul>
+                <form class="amplify-form global-search" role="search" novalidate>
+                    <label for="s" class="visuallyhidden">Search for:</label>
+                    <input type="search" class="u-no-margin-top" id="s" name="s" enterkeyhint="search">
+                    <button type="submit" class="button u-no-margin-top" name="search">
+                        <span class="visuallyhidden">Search</span>
+                        <svg xmlns='http://www.w3.org/2000/svg' class="icon icon--24" viewBox='0 0 512 512' width="24" height="24"><path d='M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z' fill='currentColor'/></svg>
+                    </button>
+                </form>
+            </nav>
+        </div>
+    </header>
+    <main id="amplify-main">
+        <div class="admin-scaffold">
+            <nav class="global-nav" data-component="nav-double" aria-label="Primary">
+                <button class="button" data-trigger="mobile-nav" style="display: none;">Menu</button>
+                <ul>
+                    <li>
+                        <a href="dashboard.html">Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="information.html">Information page</a>
+                    </li>
+                    <li>
+                        <a href="sortable-table.html" aria-current="true">Sortable table</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">Clients</a>
+                        <div data-nav="submenu">
+                            <ul class="clean-list" role="list">
+                                <li><a href="javascript:void(0);">Charities</a></li>
+                                <li><a href="javascript:void(0);">Public sector</a></li>
+                                <li><a href="javascript:void(0);">Arts and culture</a></li>
+                                <li><a href="javascript:void(0);">Education</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">A link with no children</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">Projects</a>
+                        <div data-nav="submenu">
+                            <ul class="clean-list" role="list">
+                                <li><a href="javascript:void(0);">Easy</a></li>
+                                <li><a href="javascript:void(0);">Harder</a></li>
+                                <li><a href="javascript:void(0);">Complicated</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <div class="page">
+                <h1>Multiselect table</h1>
+                <form class="amplify-form">
+                    <amplify-table-multiselect data-multiselect-label="Select all members">
+                        <div tabindex="0" data-component="table-wrap">
+                            <table id="chktb01">
+                                <caption id="unique-caption-id">Members of the Spice Girls</caption>
+                                <thead>
+                                <tr>
+                                    <th scope="col"><span class="visuallyhidden">Select</span></th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Band name</th>
+                                    <th scope="col">Date of birth</th>
+                                    <th scope="col">Place of birth</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td><input type="checkbox" id="chk00"></td>
+                                    <th scope="row"><label for="chk00">Emma Bunton<wbr></label></th>
+                                    <td>Baby</td>
+                                    <td>21 January 1976</td>
+                                    <td>Watford, Hertfordshire</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" id="chk01"></td>
+                                    <th scope="row"><label for="chk01">Geri Halliwell<wbr></label></th>
+                                    <td>Ginger</td>
+                                    <td>6 August 1972</td>
+                                    <td>London</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" id="chk02"></td>
+                                    <th scope="row"><label for="chk02">Victoria Beckham<wbr></label></th>
+                                    <td>Posh</td>
+                                    <td>17 April 1974</td>
+                                    <td>Harlow, Essex</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" id="chk03"></td>
+                                    <th scope="row"><label for="chk03">Melanie Brown<wbr></label></th>
+                                    <td>Scary</td>
+                                    <td>29 May 1975</td>
+                                    <td>Leeds, Yorkshire</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" id="chk04"></td>
+                                    <th scope="row"><label for="chk04">Melanie Chisholm<wbr></label></th>
+                                    <td>Sporty</td>
+                                    <td>12 January 1974</td>
+                                    <td>Whiston, Merseyside</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </amplify-table-multiselect>
+                </form>
+            </div>
+        </div>
+    </main>
+</div>
+</body>
+<script>
+    if (document.documentElement.classList.contains('js')) {
+        const multiselectTable = document.createElement('script');
+        multiselectTable.src = '../../dist/js/multiselect-table.js';
+        document.querySelector('body').appendChild(multiselectTable);
+    }
+</script>
+
+</html>

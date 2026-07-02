@@ -13,6 +13,7 @@ export default [{
 		'country-autocomplete': './country-autocomplete.js',
 		'tabs': './package-extensions/s24-tabby-polyfills.js',
 		'sortable-tables': './sortable-tables.js',
+		'multiselect-table': './multiselect-table.js',
 		'password-toggle': './password-toggle.js'
 	},
 	mode: 'none',
@@ -46,6 +47,7 @@ export default [{
 			'country-autocomplete': './country-autocomplete.js',
 			'tabs': './package-extensions/s24-tabby-polyfills.js',
 			'sortable-tables': './sortable-tables.js',
+			'multiselect-table': './multiselect-table.js',
 			'password-toggle': './password-toggle.js'
 		},
 		mode: 'none',
