@@ -1516,9 +1516,9 @@ main:focus,
 }
 .amplify-form div:has(> :where([type=checkbox], [type=radio])) {
   align-items: center;
+  column-gap: 0.625rem;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.625rem;
   /* Reduce vertical space between adjacent checkbox/radio fields */
 }
 .amplify-form div:has(> :where([type=checkbox], [type=radio])) + div:has(> :where([type=checkbox], [type=radio])) {
