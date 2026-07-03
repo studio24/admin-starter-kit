@@ -146,6 +146,22 @@
 						</table>
 					</div>
 				</amplify-table-sort>
+				<details>
+					<summary>About this example</summary>
+					<ul>
+						<li>This web component relies on the <code>table</code> and it's parent <code>div</code> (which makes the table scrollable on smaller screens) being wrapped in a custom element: <code>&lt;amplify-table-sort&gt;</code>. This adds the JavaScript which:
+							<ul>
+								<li>inserts the buttons into the table headers</li>
+								<li>handles the sorting of data</li>
+							</ul>
+						</li>
+						<li>The table markup must include a <code>colgroup</code> element with the same number of child <code>col</code> elements as there are <code>th</code> elements.</li>
+						<li>The <code>th</code> elements must sit within the <code>thead</code> element and the sortable data must sit within the <code>tbody</code> element.</li>
+						<li>Each <code>th</code> element must include the <code>data-type="..."</code> data attribute, which specifies the type of data in each column, e.g. <code>data-type="number"</code>, <code>data-type="string"</code> or <code>data-type="date"</code>. Use <code>data-type="no-sort"</code> when sorting functionality should be disallowed.</li>
+						<li>Where a table cell is holding a date, it must have a <code>data-date</code> attribute holding the date converted into UNIX timestamp, e.g. <code> data-date="191030400"</code>.</li>
+						<li><strong>Don't forget to remove these notes from your production code.</strong></li>
+					</ul>
+				</details>
 			</div>
 		</div>
 	</main>
