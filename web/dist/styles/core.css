@@ -687,6 +687,11 @@ a.with-icon--before:active,
 a.with-icon--after:active {
   color: #004232;
 }
+a:not([class]):focus,
+a.with-icon--before:focus,
+a.with-icon--after:focus {
+  text-decoration: none;
+}
 
 button {
   line-height: 1.15;

@@ -27,6 +27,10 @@ a.with-icon--after {
     &:active {
         color: $link-color--active;
     }
+
+	&:focus {
+		text-decoration: none;
+	}
 }
 
 
