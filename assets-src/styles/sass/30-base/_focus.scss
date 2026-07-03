@@ -1,41 +1,47 @@
 /*------------------------------------*\
-    #Global focus styles incorporating a reset for :focus-visible
+    #Global focus styles incorporating a reset for :focus-visible. 3-ring black & white
+    styling simplified from https://piccalil.li/blog/taking-a-shot-at-the-double-focus-ring-problem-using-modern-css/
 
     1. If a link breaks over multiple lines, copy focus styles over all lines.
     See https://developer.mozilla.org/en-US/docs/Web/CSS/box-decoration-break
-    2. New stacking context so focus styles not obstructed by overlapping elements
-    3. Windows High Contrast/forced-color modes tend to eliminate background-color and box-shadow.
+    2. Windows High Contrast/forced-color modes tend to eliminate background-color and box-shadow.
     We retain an outline - even if it's transparent - to ensure an accessible focus indicator.
 \*------------------------------------*/
 @use '../10-settings' as *;
 @use '../20-tools' as *;
 
 :focus {
+    --_focus-ring-spacing: 2px;
+
     box-decoration-break: clone; /* 1 */
-    box-shadow: 0 0 0 4px $black;
-    outline: 2px solid $focus-color; /* 3 */
-    outline-offset: 0; /* 3 */
-    position: relative; /* 2 */
+    box-shadow:
+            0 0 0 var(--_focus-ring-spacing) hsl(0deg 0% 0%),
+            0 0 0 calc(var(--_focus-ring-spacing) * 2) hsl(0deg 0% 100%),
+            0 0 0 calc(var(--_focus-ring-spacing) * 3) hsl(0deg 0% 0%);
+    outline: none;
     text-decoration: none;
-    z-index: 1; /* 2 */
+
+    @media (forced-colors: active) {
+        box-shadow: none;
+        outline: var(--_focus-ring-spacing) solid transparent; /* 2 */
+        outline-offset: var(--_focus-ring-spacing);
+    }
 }
 
 /**
-Unset focus styles (apart from transparent outline) where the browser wouldn't set a visible focus
+Unset box-shadow and add a transparent outline where the browser wouldn't set a visible focus
  */
 :focus:not(:focus-visible) {
     box-shadow: none;
-    outline-color: transparent;
+    outline: var(--_focus-ring-spacing) solid transparent;
 }
 
 
 /**
-Where focus is programmatically moved to a target element that is not interactive, we
-suppress the focus styles. See https://github.com/twbs/bootstrap/issues/29875#issuecomment-582648069
+Where focus is programmatically moved to a target element that's not interactive, the focus
+styles are suppressed. See https://github.com/twbs/bootstrap/issues/29875#issuecomment-582648069
  */
-main:focus,
-#main:focus,
-[tabindex="-1"]:focus {
+:where(main, #main, [tabindex="-1"]):focus {
     box-shadow: none;
     outline: none;
 }
