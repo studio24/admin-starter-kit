@@ -241,7 +241,7 @@ textarea {
 }
 
 button {
-  line-height: 1.1;
+  line-height: 1.15;
 }
 
 /* Remove margins in favour of better control by our authored CSS */
@@ -660,42 +660,23 @@ pre code {
 Basic link styles
 1: WCAG says don't rely on colour alone for styling links
  */
-a:not([class]),
-a.with-icon--before,
-a.with-icon--after {
-  border: none;
-  color: #005e48;
+a {
+  --_link-color: var(--link-color, #005e48);
+}
+a:visited, a:active {
+  --link-color: #004232;
+}
+a:hover {
+  --link-color: #002c21;
+}
+a:focus {
+  text-decoration: none;
+}
+a {
+  border: 0;
+  color: var(--_link-color);
   cursor: pointer;
   text-decoration: underline; /* 1 */
-}
-a:not([class]):visited,
-a.with-icon--before:visited,
-a.with-icon--after:visited {
-  color: #004232;
-}
-a:not([class]):hover,
-a.with-icon--before:hover,
-a.with-icon--after:hover {
-  color: #002c21;
-}
-a:not([class]):active,
-a.with-icon--before:active,
-a.with-icon--after:active {
-  color: #004232;
-}
-a:not([class]):focus,
-a.with-icon--before:focus,
-a.with-icon--after:focus {
-  text-decoration: none;
-}
-
-button {
-  line-height: 1.15;
-}
-
-/* Remove text underline from links styled as buttons */
-.button {
-  text-decoration: none;
 }
 
 /**
@@ -706,31 +687,48 @@ Buttons
 button,
 .button,
 input[type=submit].button {
+  --_btn-border: var(--btn-border, #005e48);
+  --_btn-bg: var(--btn-bg, #005e48);
+  --_btn-text: var(--btn-text, #fff);
+  --_btn-pad-block: var(--btn-pad-block, 0.25em);
+  --_btn-pad-inline: var(--btn-pad-inline, 0.75em);
+  --_btn-radius: var(--btn-radius, 0.3125rem);
+}
+button:hover, button:active,
+.button:hover,
+.button:active,
+input[type=submit].button:hover,
+input[type=submit].button:active {
+  --btn-border: #002c21;
+  --btn-bg: #002c21;
+}
+button,
+.button,
+input[type=submit].button {
   align-items: center;
   align-self: start; /* 1 */
-  background-color: #005e48;
-  border: solid 2px #005e48;
-  border-radius: 0.3125rem;
-  color: white;
+  background-color: var(--_btn-bg);
+  border: solid 2px var(--_btn-border);
+  border-radius: var(--_btn-radius);
+  color: var(--_btn-text);
   display: inline-flex;
   justify-content: center;
   min-block-size: 2.75rem; /* 2 */
   padding-block: 0.25em;
   padding-inline: 0.75em;
+  text-decoration: none;
 }
-button:hover,
-.button:hover,
-input[type=submit].button:hover {
-  background-color: #002c21;
-  border-color: #002c21;
-  color: white;
+
+/* Alternative button style with a distinct border */
+.button--alt {
+  --btn-border: #005e48;
+  --btn-bg: transparent;
+  --btn-text: #005e48;
 }
-button:active,
-.button:active,
-input[type=submit].button:active {
-  background-color: #002c21;
-  border-color: #002c21;
-  color: white;
+.button--alt:hover, .button--alt:active {
+  --btn-border: #000;
+  --btn-bg: transparent;
+  --btn-text: #000;
 }
 
 /* Full-width buttons */
@@ -738,44 +736,32 @@ input[type=submit].button:active {
   inline-size: 100%;
 }
 
-/* Alternative button style with a distinct border */
-.button--alt.button--alt {
-  background-color: transparent;
-  border-color: #005e48;
-  color: #005e48;
-}
-.button--alt.button--alt:hover {
-  border-color: #000;
-  color: #000;
-}
-.button--alt.button--alt:active {
-  border-color: #000;
-  color: #000;
-}
-
 /**
  For buttons with no visible background or border
  1: Ghost button has no padding but we still want to meet WCAG AAA target size
  */
-.button--ghost.button--ghost {
-  background-color: transparent;
-  border-color: transparent;
-  color: #000;
-  min-inline-size: 2.75rem; /* 1 */
-  padding: 0;
+.button--ghost {
+  --btn-border: transparent;
+  --btn-text: #000;
+  --btn-bg: transparent;
+  --btn-pad-block: 0;
+  --btn-pad-inline: 0;
 }
-.button--ghost.button--ghost:hover {
-  background-color: transparent;
-  border-color: transparent;
+.button--ghost:hover, .button--ghost:active {
+  --btn-bg: transparent;
+  --btn-border: transparent;
+}
+.button--ghost {
+  min-inline-size: 2.75rem; /* 1 */
 }
 
 /* Disabled buttons */
 button[disabled],
 .button[disabled],
 .button.js-disabled {
-  background-color: #8d8d8d;
-  border-color: #8d8d8d;
-  color: #262626;
+  --btn-border: #8d8d8d;
+  --btn-text: #000;
+  --btn-bg: #8d8d8d;
   cursor: not-allowed;
 }
 
@@ -2200,40 +2186,16 @@ nav ul * + * {
 }
 
 .global-nav a {
-  color: inherit;
-  display: block;
-  line-height: normal;
-  padding: 0.5625rem 0.875rem;
-}
-.global-nav a:visited, .global-nav a:hover, .global-nav a:active {
-  color: inherit;
+  --link-color: #262626;
 }
 .global-nav a:hover {
   background-color: #e0e0e0;
+}
+.global-nav a {
   border-radius: 0.3125rem;
-}
-
-.global-nav ul button {
-  background-color: transparent;
-  border: solid 2px #6f6f6f;
-  color: inherit;
-  margin-top: 0.625rem;
-}
-.global-nav ul button[aria-expanded=true] {
-  border-bottom: none;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-.global-nav ul button:hover {
-  background-color: #e0e0e0;
-}
-
-.global-nav li:has(button) + li {
-  margin-top: 0.625rem;
-}
-
-button[data-trigger=mobile-nav] + ul {
-  margin-top: 0.625rem;
+  display: block;
+  line-height: normal;
+  padding: 0.5625rem 0.875rem;
 }
 
 /* The navigation in the header */

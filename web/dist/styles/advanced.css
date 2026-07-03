@@ -298,6 +298,10 @@ amplify-table-sort col.js-sorted {
 .js .global-nav [data-trigger=mobile-nav][aria-expanded=true] .open {
   display: none;
 }
+.js .global-nav [data-trigger=mobile-nav] + ul {
+  -webkit-margin-before: 0.625rem;
+          margin-block-start: 0.625rem;
+}
 .js .global-nav [aria-expanded=false] + * {
   display: none;
 }
@@ -328,9 +332,29 @@ amplify-table-sort col.js-sorted {
 /* stylelint-disable no-descending-specificity */
 /* (Because the order reflects the DOM order, which Stylelint doesn't understand) */
 /* Simple double level nav with vertical expansion */
+#js-click-nav-vertical li:has(button) + li {
+  -webkit-margin-before: 0.625rem;
+          margin-block-start: 0.625rem;
+}
+#js-click-nav-vertical [data-trigger=sub-nav] {
+  --btn-border: #6f6f6f;
+  --btn-bg: transparent;
+  --btn-text: #262626;
+}
+#js-click-nav-vertical [data-trigger=sub-nav]:hover {
+  --btn-bg: #e0e0e0;
+}
 #js-click-nav-vertical [data-trigger=sub-nav] {
   inline-size: 100%;
   justify-content: space-between;
+  -webkit-margin-before: 0.625rem;
+          margin-block-start: 0.625rem;
+}
+#js-click-nav-vertical [data-trigger=sub-nav][aria-expanded=true] {
+  --btn-bg: #e0e0e0;
+  border-bottom: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 #js-click-nav-vertical [data-nav=submenu] {
   border: solid 2px #6f6f6f;

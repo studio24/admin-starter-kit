@@ -8,40 +8,26 @@
 Basic link styles
 1: WCAG says don't rely on colour alone for styling links
  */
-a:not([class]),
-a.with-icon--before,
-a.with-icon--after {
-	border: none;
-	color: $link-color;
-	cursor: pointer;
-	text-decoration: underline; /* 1 */
+a {
+	--_link-color: var(--link-color, #{$accent-70});
 
-	&:visited {
-		color: $link-color--visited;
+	&:visited,
+	&:active {
+		--link-color: #{$accent-80};
 	}
 
 	&:hover {
-		color: $link-color--hover;
+		--link-color: #{$accent-90};
 	}
-
-    &:active {
-        color: $link-color--active;
-    }
 
 	&:focus {
 		text-decoration: none;
 	}
-}
 
-
-button {
-    line-height: 1.15;
-}
-
-
-/* Remove text underline from links styled as buttons */
-.button {
-	text-decoration: none;
+	border: 0;
+	color: var(--_link-color);
+	cursor: pointer;
+	text-decoration: underline; /* 1 */
 }
 
 
@@ -53,29 +39,44 @@ Buttons
 button,
 .button,
 input[type="submit"].button {
+	--_btn-border: var(--btn-border, #{$accent-70});
+	--_btn-bg: var(--btn-bg, #{$accent-70});
+	--_btn-text: var(--btn-text, #fff);
+	--_btn-pad-block: var(--btn-pad-block, 0.25em);
+	--_btn-pad-inline: var(--btn-pad-inline, 0.75em);
+	--_btn-radius: var(--btn-radius, #{rem(5)});
+
+	&:hover, &:active {
+		--btn-border: #{$accent-90};
+		--btn-bg: #{$accent-90};
+	}
+
 	align-items: center;
 	align-self: start; /* 1 */
-	background-color: $button-bg;
-	border: solid 2px $button-bg;
-	border-radius: rem(5);
-	color: white;
+	background-color: var(--_btn-bg);
+	border: solid 2px var(--_btn-border);
+	border-radius: var(--_btn-radius);
+	color: var(--_btn-text);
 	display: inline-flex;
 	justify-content: center;
 	min-block-size: rem(44); /* 2 */
 	padding-block: 0.25em;
 	padding-inline: 0.75em;
+	text-decoration: none;
+}
 
-	&:hover {
-		background-color: $button-bg--hover;
-		border-color: $button-bg--hover;
-		color: white;
+
+/* Alternative button style with a distinct border */
+.button--alt {
+	--btn-border: #{$accent-70};
+	--btn-bg: transparent;
+	--btn-text: #{$accent-70};
+
+	&:hover, &:active {
+		--btn-border: #000;
+		--btn-bg: transparent;
+		--btn-text: #000;
 	}
-
-    &:active {
-        background-color: $button-bg--active;
-        border-color: $button-bg--active;
-		color: white;
-    }
 }
 
 
@@ -85,50 +86,33 @@ input[type="submit"].button {
 }
 
 
-/* Alternative button style with a distinct border */
-.button--alt.button--alt {
-	background-color: transparent;
-	border-color: $link-color;
-	color: $link-color;
-
-	&:hover {
-		// background-color: $accent-10;
-		border-color: #000;
-		color: #000;
-	}
-
-    &:active {
-		// background-color: $accent-10;
-		border-color: #000;
-        color: #000;
-    }
-}
-
-
 /**
  For buttons with no visible background or border
  1: Ghost button has no padding but we still want to meet WCAG AAA target size
  */
-.button--ghost.button--ghost {
-	background-color: transparent;
-	border-color: transparent;
-	color: #000;
-	min-inline-size: rem(44); /* 1 */
-	padding: 0;
+.button--ghost {
+	--btn-border: transparent;
+	--btn-text: #000;
+	--btn-bg: transparent;
+	--btn-pad-block: 0;
+	--btn-pad-inline: 0;
 
-	&:hover {
-		background-color: transparent;
-		border-color: transparent;
+	&:hover, &:active {
+		--btn-bg: transparent;
+		--btn-border: transparent;
 	}
+
+	min-inline-size: rem(44); /* 1 */
 }
 
 
 /* Disabled buttons */
-button[disabled],
-.button[disabled],
-.button.js-disabled {
-    background-color: $neutral-50;
-    border-color: $neutral-50;
-    color: $neutral-90;
-    cursor: not-allowed;
-}
+ button[disabled],
+ .button[disabled],
+ .button.js-disabled {
+	 --btn-border: #{$neutral-50};
+	 --btn-text: #000;
+	 --btn-bg: #{$neutral-50};
+
+	 cursor: not-allowed;
+ }

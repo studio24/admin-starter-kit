@@ -44,6 +44,10 @@
         }
     }
 
+    [data-trigger="mobile-nav"] + ul {
+        margin-block-start: rem(10);
+    }
+
     [aria-expanded="false"] + * {
         display: none;
     }

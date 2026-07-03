@@ -12,9 +12,30 @@
 
 /* Simple double level nav with vertical expansion */
 #js-click-nav-vertical {
+    li:has(button) + li {
+        margin-block-start: rem(10);
+    }
+
     [data-trigger="sub-nav"] {
+        --btn-border: #{$neutral-60};
+        --btn-bg: transparent;
+        --btn-text: #{$neutral-90};
+
+        &:hover {
+            --btn-bg: #{$neutral-20};
+        }
+
         inline-size: 100%;
         justify-content: space-between;
+        margin-block-start: rem(10);
+
+        &[aria-expanded="true"] {
+            --btn-bg: #{$neutral-20};
+
+            border-bottom: none;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
     }
 
     [data-nav="submenu"] {
