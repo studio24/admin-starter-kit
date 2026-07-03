@@ -166,6 +166,28 @@
                             </table>
                         </div>
                     </amplify-table-multiselect>
+                    <fieldset>
+                        <legend>I am a legend element for radio inputs</legend>
+                        <div class="radio-item">
+                            <input type="radio" name="input-radios" id="radio-1" value="option-1" checked="">
+                            <label for="radio-1">
+                                <span>We put the label text in a span because we can use <code>:has()</code> to style radios and checkboxes with flexbox</span>
+                            </label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" name="input-radios" id="radio-2" value="option-2" aria-describedby="hint-radio-2">
+                            <label for="radio-2">
+                                <span>The second option should de-select option 1</span>
+                            </label>
+                            <div class="field-hint" id="hint-radio-2">Hint text for this radio item would go here.</div>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" name="input-radios" id="radio-3" value="option-3" disabled="">
+                            <label for="radio-3">
+                                <span>This one is disabled and can’t be selected</span>
+                            </label>
+                        </div>
+                    </fieldset>
                 </form>
             </div>
         </div>
