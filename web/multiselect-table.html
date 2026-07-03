@@ -167,6 +167,22 @@
                         </div>
                     </amplify-table-multiselect>
                 </form>
+                <details>
+                    <summary>About this example</summary>
+                    <ul>
+                        <li>This web component relies on the <code>table</code> and it's parent <code>div</code> (which makes the table scrollable on smaller screens) being wrapped in a custom element: <code>&lt;amplify-table-multiselect&gt;</code>. This adds the JavaScript which:
+                            <ul>
+                                <li>inserts the main checkbox for controlling all individual checkboxes in the table rows</li>
+                                <li>adds a label to the main checkbox</li>
+                                <li>handles the state of the main checkbox and the checkboxes in the table, including an indeterminate state if only some of the tble checkboxes are checked</li>
+                            </ul>
+                        </li>
+                        <li>The custom element is contained in a <code>form</code>, because it is assumed that selecting items would be followed by some sort of bulk action (e.g. deletion).</li>
+                        <li>The main checkbox is placed before the table, which is a <a href="https://adrianroselli.com/2025/07/check-uncheck-all-in-a-table.html">best practice recommendation</a> for accessibility.</li>
+                        <li>The default wording for the main checkbox label is &quot;Select all&quot;. This can be overridden using the <code>data-multiselect-label</code> attribute on the custom element to make it more relevant to the table contents, as in this example.</li>
+                        <li><strong>Don't forget to remove these notes from your production code.</strong></li>
+                    </ul>
+                </details>
             </div>
         </div>
     </main>
