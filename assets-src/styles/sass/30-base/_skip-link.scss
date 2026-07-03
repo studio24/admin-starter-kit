@@ -8,8 +8,7 @@
 .skip-link.skip-link {
 	@extend .visuallyhidden;
 
-	background-color: $focus-color;
-    box-shadow: inset 0 0 0 2px #000;
+	background-color: $accent-30;
 	color: #000;
 	padding-block: em(10);
 	padding-inline: em(15);
@@ -18,9 +17,7 @@
     z-index: 999;
 
 	&:focus {
-        box-shadow: inset 0 0 0 2px #000;
-        color: #000;
-		inset-block-start: 5px;
-		inset-inline-start: 5px;
+		inset-block-start: calc(var(--_focus-ring-spacing) * 3);
+		inset-inline-start: calc(var(--_focus-ring-spacing) * 3);
 	}
 }
