@@ -93,14 +93,14 @@ input[type="submit"].button {
 
 	&:hover {
 		// background-color: $accent-10;
-		border-color: $black;
-		color: $black;
+		border-color: #000;
+		color: #000;
 	}
 
     &:active {
 		// background-color: $accent-10;
-		border-color: $black;
-        color: $black;
+		border-color: #000;
+        color: #000;
     }
 }
 
@@ -112,7 +112,7 @@ input[type="submit"].button {
 .button--ghost.button--ghost {
 	background-color: transparent;
 	border-color: transparent;
-	color: $black;
+	color: #000;
 	min-inline-size: rem(44); /* 1 */
 	padding: 0;
 
@@ -129,6 +129,6 @@ button[disabled],
 .button.js-disabled {
     background-color: $neutral-50;
     border-color: $neutral-50;
-    color: $off-black;
+    color: $neutral-90;
     cursor: not-allowed;
 }

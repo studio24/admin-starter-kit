@@ -7,21 +7,21 @@
 @use '../20-tools' as *;
 
 .amplify .global-header {
-	background-color: $off-black;
-	color: $white;
+	background-color: $neutral-90;
+	color: #fff;
 	padding-block: rem(10);
 }
 
 .amplify .global-header__link {
 	@include text-25;
 
-	color: $white;
+	color: #fff;
 	padding-block: rem(5);
 	text-decoration: none;
 
 	&:hover,
 	&:visited {
-		color: $white;
+		color: #fff;
 	}
 
 	&:hover {
@@ -55,8 +55,8 @@
 }
 
 .amplify .current .global-nav__link {
-	border-block-end-color: $off-black;
-	color: $off-black;
+	border-block-end-color: $neutral-90;
+	color: $neutral-90;
 
 	&:hover {
 		text-decoration: none;
@@ -77,10 +77,10 @@
 }
 
 .amplify .nav-secondary__link[aria-current] {
-	color: $off-black;
+	color: $neutral-90;
 
 	&::before {
-		background-color: $off-black;
+		background-color: $neutral-90;
 		block-size: 1.5rem;
 		content: '';
 		inline-size: 4px;

@@ -5,9 +5,6 @@
     as required for your project.
 
     The ideal color contrast range for meeting WCAG AAA is 7:1 - 15:1
-
-    1. A contrast higher than 15:1 can be triggering, which is why we
-    avoid using pure white with pure black.
 \*------------------------------------*/
 
 /**
@@ -53,10 +50,6 @@ $neutral-40: #a8a8a8;
 $neutral-30: #c6c6c6;
 $neutral-20: #e0e0e0;
 $neutral-10: #f4f4f4;
-
-$off-black: $neutral-90; /* 1 */
-$black: #000;
-$white: #fff;
 
 
 

@@ -9,8 +9,8 @@
 	@extend .visuallyhidden;
 
 	background-color: $focus-color;
-    box-shadow: inset 0 0 0 2px $black;
-	color: $black;
+    box-shadow: inset 0 0 0 2px #000;
+	color: #000;
 	padding-block: em(10);
 	padding-inline: em(15);
     position: absolute;
@@ -18,8 +18,8 @@
     z-index: 999;
 
 	&:focus {
-        box-shadow: inset 0 0 0 2px $black;
-        color: $black;
+        box-shadow: inset 0 0 0 2px #000;
+        color: #000;
 		inset-block-start: 5px;
 		inset-inline-start: 5px;
 	}

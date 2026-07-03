@@ -16,9 +16,9 @@
 @use '../20-tools' as *;
 
 .global-footer {
-    background-color: $white;
+    background-color: #fff;
     border-top: solid 1px $neutral-30;
-    color: $off-black;
+    color: $neutral-90;
 	grid-row: 2 / 3; /* 1 */
 	-ms-grid-row-span: 1; /* 2 */
     line-height: normal;
@@ -45,6 +45,5 @@
 }
 
 .global-footer__credits {
-    background-color: $white;
     padding: 10px 20px;
 }

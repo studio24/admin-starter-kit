@@ -55,14 +55,14 @@ Separator chevron - see https://codepen.io/jonneal/pen/kptBs
 
 
 .breadcrumbs a {
-	color: $off-black;
+	color: $neutral-90;
 	display: block;
 	padding-block: rem(5);
 
 	&:visited,
 	&:hover,
 	&:active {
-		color: $off-black;
+		color: $neutral-90;
 	}
 }
 
@@ -72,6 +72,6 @@ Separator chevron - see https://codepen.io/jonneal/pen/kptBs
 	text-decoration: none;
 
 	&:focus {
-		outline-color: $off-black;
+		outline-color: $neutral-90;
 	}
 }

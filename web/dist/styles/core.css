@@ -67,9 +67,6 @@
     as required for your project.
 
     The ideal color contrast range for meeting WCAG AAA is 7:1 - 15:1
-
-    1. A contrast higher than 15:1 can be triggering, which is why we
-    avoid using pure white with pure black.
 \*------------------------------------*/
 /**
 Brand
@@ -80,7 +77,6 @@ Accent
 /**
 Neutrals
  */
-/* 1 */
 /**
 Admin theme
  */
@@ -2827,7 +2823,6 @@ Separator chevron - see https://codepen.io/jonneal/pen/kptBs
 }
 
 .global-footer__credits {
-  background-color: #fff;
   padding: 10px 20px;
 }
 

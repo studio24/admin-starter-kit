@@ -11,8 +11,8 @@
 Typographical styles for fonts are in 30-base/_typography.scss
  */
 body {
-	background-color: $white;
-	color: $off-black;
+	background-color: #fff;
+	color: $neutral-90;
 	display: grid; /* 1 */
 	grid-template-columns: 100%;
 	grid-template-rows: 1fr auto; /* 1 */
@@ -30,7 +30,7 @@ full height columns to pages using `div.admin-scaffold`
 @supports selector(:has(*)) {
     body:has(div.admin-scaffold) {
         @include mq($bp-tab-landscape) {
-            background-image: linear-gradient(90deg, #{$admin-bg-primary}, #{$admin-bg-primary} 300px, #{$neutral-30}  301px, #{$white} 302px, #{$white});
+            background-image: linear-gradient(90deg, #{$admin-bg-primary}, #{$admin-bg-primary} 300px, #{$neutral-30}  301px, #fff 302px, #fff);
         }
     }
 }

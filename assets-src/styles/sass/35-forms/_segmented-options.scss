@@ -98,7 +98,7 @@
 
         /* Input with focus - label carries focus styles */
         input:focus + label {
-            border-color: $black;
+            border-color: #000;
             box-shadow: inset 0 0 0 4px $input-border-color;
             outline: 2px solid $focus-color; /* 1 */
             outline-offset: -4px; /* 1 */

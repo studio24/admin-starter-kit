@@ -17,8 +17,8 @@
 
 
 .autocomplete__input--focused {
-	background-color: $white;
-    box-shadow: 0 0 0 4px $black;
+	background-color: #fff;
+    box-shadow: 0 0 0 4px #000;
     outline: 2px solid $focus-color; /* 2 */
     outline-offset: 0; /* 2 */
 }
@@ -61,7 +61,7 @@
 
 .autocomplete__option--no-results {
 	background-color:  $neutral-30;
-	color: $off-black;
+	color: $neutral-90;
 }
 
 
