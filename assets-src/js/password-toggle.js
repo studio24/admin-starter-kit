@@ -3,68 +3,129 @@
  */
 
 customElements.define('amplify-pw-toggle', class extends HTMLElement {
-    // Instantiate the web component
-    constructor() {
-        // Inherit parent class properties
-        super();
+    // Declare private instance properties
+    /** @type HTMLInputElement */ #passwordInput;
+    /** @type HTMLButtonElement */ #showHideBtn;
+    /** @type HTMLDivElement */ #screenReaderStatusMessage;
 
-        // insertAfter helper function
-        function insertAfter(el, referenceNode) {
-            referenceNode.parentNode.insertBefore(el, referenceNode.nextSibling);
+    /**
+     * Initialize on connect
+     * Checks for DOM status first, ensuring code doesn't run before required
+     * elements exist in the DOM.
+     */
+    connectedCallback() {
+        if (document.readyState !== 'loading') {
+            this.init();
+            return;
         }
+        document.addEventListener('DOMContentLoaded', () => this.init(), {
+            once: true,
+        });
+    }
 
-        let passwordInput = this.querySelector('input[type="password"]');
-        let showHideBtn = this.querySelector('button[aria-controls="password-input"]');
+    /**
+     * Cleanup global event listeners on disconnect
+     */
+    disconnectedCallback() {
+        this.#passwordInput.form?.removeEventListener('submit', this);
+        window.removeEventListener('pageshow', this);
+    }
 
-        showHideBtn.removeAttribute('hidden');
+    /**
+     * Set up the component
+     */
+    init() {
+        this.#passwordInput = this.querySelector('input[type="password"]');
+        this.#showHideBtn = this.querySelector(
+            'button[aria-controls="password-input"]'
+        );
+
+        this.#showHideBtn.removeAttribute('hidden');
 
         // Create and append a status region for updating screen readers.
         // This is injected between the input and button for a sensible reading order when
         // moving through the page content linearly:
         // [password input] -> [your password is visible/hidden] -> [show/hide password]
-        const screenReaderStatusMessage = document.createElement('div');
-        screenReaderStatusMessage.setAttribute('class', 'visuallyhidden');
-        screenReaderStatusMessage.setAttribute('aria-live', 'polite');
+        this.#screenReaderStatusMessage = document.createElement('div');
+        this.#screenReaderStatusMessage.setAttribute('class', 'visuallyhidden');
+        this.#screenReaderStatusMessage.setAttribute('aria-live', 'polite');
+        this.#insertAfter(this.#screenReaderStatusMessage, this.#passwordInput);
 
-        insertAfter(screenReaderStatusMessage, passwordInput);
+        // Attach event listeners
+        this.#showHideBtn.addEventListener('click', this);
+        this.#passwordInput.form?.addEventListener('submit', this);
+        window.addEventListener('pageshow', this);
 
-        function setType(type) {
-            if (passwordInput.type === type) return;
+        this.#hide(); // Default to hidden
+    }
 
-            passwordInput.setAttribute('type', type);
-
-            const isHidden = type === 'password';
-            showHideBtn.innerText = isHidden ? 'Show' : 'Hide';
-            screenReaderStatusMessage.innerText = isHidden
-                ? 'Your password is hidden'
-                : 'Your password is visible';
+    /**
+     * Handle events for the web component
+     * @param {Event} event
+     */
+    handleEvent(event) {
+        if (event.type === 'click') {
+            this.#toggle(event);
+            return;
         }
 
-        function hide() {
-            setType('password');
+        if (event.type === 'submit') {
+            this.#hide();
+            return;
         }
 
-        function show() {
-            setType('text');
-        }
-
-        function toggle(event) {
-            event.preventDefault();
-            passwordInput.type === 'password' ? show() : hide();
-        }
-
-        showHideBtn.addEventListener('click', toggle);
-
-        if (passwordInput.form) {
-            passwordInput.form.addEventListener('submit', hide);
-        }
-
-        window.addEventListener('pageshow', (event) => {
-            if (event.persisted && passwordInput.type !== 'password') {
-                hide();
+        if (event.type === 'pageshow') {
+            if (event.persisted && this.#passwordInput.type !== 'password') {
+                this.#hide();
             }
-        })
+        }
+    }
 
-        hide(); // Default to hidden
+    /**
+     * Insert an element immediately after a reference node
+     * @param {Element} el - element to insert
+     * @param {Element} referenceNode - node to insert after
+     */
+    #insertAfter(el, referenceNode) {
+        referenceNode.parentNode.insertBefore(el, referenceNode.nextSibling);
+    }
+
+    /**
+     * Set the password input's type and update the button/status text to match
+     * @param {'password' | 'text'} type
+     */
+    #setType(type) {
+        if (this.#passwordInput.type === type) return;
+
+        this.#passwordInput.setAttribute('type', type);
+
+        const isHidden = type === 'password';
+        this.#showHideBtn.innerText = isHidden ? 'Show' : 'Hide';
+        this.#screenReaderStatusMessage.innerText = isHidden
+            ? 'Your password is hidden'
+            : 'Your password is visible';
+    }
+
+    /**
+     * Hide the password (mask input as type="password")
+     */
+    #hide() {
+        this.#setType('password');
+    }
+
+    /**
+     * Show the password (reveal input as type="text")
+     */
+    #show() {
+        this.#setType('text');
+    }
+
+    /**
+     * Toggle the password's visibility
+     * @param {MouseEvent} event
+     */
+    #toggle(event) {
+        event.preventDefault();
+        this.#passwordInput.type === 'password' ? this.#show() : this.#hide();
     }
 });

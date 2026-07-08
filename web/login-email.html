@@ -48,9 +48,15 @@
 			<summary>About this example</summary>
 			<ul>
 				<li>This login form requires an email address. The input markup is tailored accordingly.</li>
-				<li>There is no need for a password confirmation field, thanks to the show/hide functionality</li>
-				<li>It should be self-evident that all fields on a login form are required (and there should be no non-essential fields). The sentence before the form makes this obvious to everyone.</li>
 				<li>The <code>novalidate</code> attribute on the form turns off HTML5 in-browser validation, which is not very accessible.</li>
+				<li>It should be self-evident that all fields on a login form are required (and there should be no non-essential fields). The sentence before the form makes this obvious to everyone.</li>
+				<li>There is no need for a password confirmation field, thanks to the show/hide functionality. This is managed by a web component: the password input and button to control the show/hide functionality are wrapped in a custom element: <code>&lt;amplify-pw-toggle&gt;</code>. This adds the JavaScript which:
+					<ul>
+						<li>unhides the show/hide button</li>
+						<li>handles the show/hide functionality</li>
+						<li>adds an ARIA live region so that people with low/no vision are aware whether their password is visible on screen</li>
+					</ul>
+				</li>
 				<li><strong>Don't forget to remove these notes from your production code.</strong></li>
 			</ul>
 		</details>
